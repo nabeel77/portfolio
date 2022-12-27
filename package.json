@@ -8,7 +8,7 @@
     "npm": "please-use-yarn"
   },
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "dev": "cross-env NODE_ENV=development nodemon ./server/index.js --watch ./server/index.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -18,9 +18,28 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/register": "^7.18.9",
+    "@koa/cors": "^4.0.0",
     "@next/font": "13.1.1",
+    "babel-polyfill": "^6.26.0",
+    "dotenv": "^16.0.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
+    "isomorphic-fetch": "^3.0.0",
+    "koa": "^2.14.1",
+    "koa-body": "^6.0.1",
+    "koa-cache-control": "^2.0.0",
+    "koa-combine-routers": "^4.0.2",
+    "koa-conditional-get": "^3.0.0",
+    "koa-etag": "^4.0.0",
+    "koa-mongo": "^1.9.3",
+    "koa-router": "^12.0.0",
+    "koa-session": "^6.2.0",
+    "koa-static": "^5.0.0",
+    "koa-static-cache": "^5.1.4",
+    "mongodb": "^4.13.0",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -39,7 +58,6 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
     "cross-env": "^7.0.3",
-    "eslint-plugin-storybook": "^0.6.8",
     "husky": "^8.0.2",
     "prettier": "^2.8.1"
   },
