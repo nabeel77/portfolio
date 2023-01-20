@@ -5,7 +5,46 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        small: '320px',
+      },
+      colors: {
+        blue: {
+          cadet: '#004445',
+          sea: '#20948b',
+          rain: '#2c7873',
+          electric: '#42C6CC',
+          greenishBlue: '#00BBC4',
+          darker: '#001f2b',
+        },
+        gray: {
+          lighter: '#d3d3d3',
+          loadingBg: 'rgba(211, 211, 211, 0.1)',
+        },
+      },
+      width: {
+        30: '30%',
+      },
+      height: {
+        '50vh': '50vh',
+      },
+      boxShadow: {
+        light: '0 20px 25px -5px rgba(106, 177, 135, 0.4)',
+        '3xl': '0 35px 60px -15px rgba(33, 245, 255, 0.4)',
+        '5xl': '0 36px 100px 5px rgba(33, 245, 255, 0.5)',
+      },
+      keyframes: {
+        fullspin: {
+          '100%': {
+            transform: 'rotate(-360deg)',
+          },
+        },
+      },
+      animation: {
+        fullSpin: 'fullSpin 3s linear infinite',
+      },
+    },
   },
   plugins: [],
 };

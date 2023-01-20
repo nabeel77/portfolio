@@ -1,0 +1,53 @@
+{"level":"error","message":"Cannot read properties of undefined (reading 'set')","service":"webscraper","timestamp":"2023-01-10T19:40:53.256Z"}
+{"level":"error","message":"Cannot send secure cookie over unencrypted connection","service":"webscraper","timestamp":"2023-01-10T19:41:36.223Z"}
+{"level":"error","message":"this.expires.toUTCString is not a function","service":"webscraper","timestamp":"2023-01-10T19:45:59.465Z"}
+{"level":"error","message":"this.expires.toUTCString is not a function","service":"webscraper","timestamp":"2023-01-10T19:46:11.156Z"}
+{"level":"error","message":"this.expires.toUTCString is not a function","service":"webscraper","timestamp":"2023-01-10T19:48:11.261Z"}
+{"level":"error","message":"this.expires.toUTCString is not a function","service":"webscraper","timestamp":"2023-01-10T19:49:15.923Z"}
+{"level":"error","message":"Cannot send secure cookie over unencrypted connection","service":"webscraper","timestamp":"2023-01-11T13:09:57.526Z"}
+{"level":"error","message":"Cannot send secure cookie over unencrypted connection","service":"webscraper","timestamp":"2023-01-11T13:10:33.624Z"}
+{"level":"error","message":"Cannot send secure cookie over unencrypted connection","service":"webscraper","timestamp":"2023-01-11T13:11:48.428Z"}
+{"level":"error","message":"Cannot send secure cookie over unencrypted connection","service":"webscraper","timestamp":"2023-01-11T13:28:30.487Z"}
+{"level":"error","message":"Cannot send secure cookie over unencrypted connection","service":"webscraper","timestamp":"2023-01-11T13:28:58.834Z"}
+{"level":"error","message":"Cannot send secure cookie over unencrypted connection","service":"webscraper","timestamp":"2023-01-11T20:57:59.414Z"}
+{"level":"error","message":"jwt must be provided","service":"webscraper","timestamp":"2023-01-13T20:13:53.864Z"}
+{"level":"error","message":"jwt must be provided","service":"webscraper","timestamp":"2023-01-13T20:14:37.303Z"}
+{"level":"error","message":"Bad control character in string literal in JSON at position 60","service":"webscraper","timestamp":"2023-01-13T20:15:45.157Z"}
+{"level":"error","message":"invalid signature","service":"webscraper","timestamp":"2023-01-13T20:22:06.042Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T20:29:37.838Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T20:29:38.394Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T22:17:34.903Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T22:17:34.987Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T22:17:44.052Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T22:17:44.063Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T22:17:49.293Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T22:17:49.297Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:42:43.429Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:42:43.778Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:42:51.367Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:42:51.370Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:42:57.404Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:42:57.407Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:43:03.651Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:43:03.694Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:43:13.678Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-13T23:43:13.686Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-19T13:15:44.263Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-19T13:15:44.267Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","service":"portfolio","timestamp":"2023-01-20T15:14:03.224Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","service":"portfolio","timestamp":"2023-01-20T15:14:15.738Z"}
+{"level":"error","message":"skills.map is not a function","service":"portfolio","timestamp":"2023-01-20T15:14:56.638Z"}
+{"level":"error","message":"skills.map is not a function","service":"portfolio","timestamp":"2023-01-20T15:15:29.283Z"}
+{"level":"error","message":"skills.map is not a function","service":"portfolio","timestamp":"2023-01-20T15:15:52.475Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:23:31.737Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Typescript'","service":"portfolio","timestamp":"2023-01-20T15:30:58.077Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:31:50.960Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:46:21.853Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:46:59.074Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:47:17.398Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:47:41.953Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:48:07.297Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Typescript'","service":"portfolio","timestamp":"2023-01-20T15:48:40.861Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:50:12.732Z"}
+{"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:50:43.930Z"}
+{"level":"error","message":"Cannot read properties of null (reading 'map')","service":"portfolio","timestamp":"2023-01-20T16:03:44.762Z"}
