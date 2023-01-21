@@ -6,7 +6,7 @@ dotenv.config();
 export const getUserSkills = async (ctx, username) => {
   try {
     const result = await ctx.db.collection('skills').findOne({ username });
-    return { status: 'success', result };
+    return result;
   } catch (err) {
     logger.error(err.message);
     return { status: 'error', message: 'Failed to get skills' };
@@ -15,18 +15,24 @@ export const getUserSkills = async (ctx, username) => {
 
 export const userSkills = async (ctx, skills) => {
   try {
+    let parsedCookieData;
+    const cookie = ctx.cookies.get('jwt');
     const filteredSkills = skills.selectedOption.map((skill) => skill.value);
     const returnMessage = {
       status: 'success',
       message: 'Skills saved successfully',
     };
-    const parsedCookieData = JSON.parse(
-      atob(ctx.cookies.get('jwt').split('.')[1])
-    );
+    if (cookie) {
+      parsedCookieData = JSON.parse(atob(cookie.split('.')[1]));
+    }
     const username = parsedCookieData.username;
     const skillSets = await getUserSkills(ctx, username);
-    if (skillSets.status === 'success') {
-      await updateSkills(ctx, username, filteredSkills);
+    if (skillSets) {
+      await updateSkills(
+        ctx,
+        username,
+        skillSets.skillSet.concat(filteredSkills)
+      );
       return returnMessage;
     } else {
       await ctx.db

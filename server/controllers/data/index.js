@@ -6,9 +6,15 @@ export const addSkills = async (ctx) => {
 };
 
 export const getSkills = async (ctx) => {
-  const username = JSON.parse(
-    atob(ctx.cookies.get('jwt').split('.')[1])
-  ).username;
+  let username;
+  const cookie = ctx.cookies.get('jwt');
+  if (cookie) {
+    username = JSON.parse(atob(cookie.split('.')[1])).username;
+  }
   const result = await getUserSkills(ctx, username);
-  ctx.body = result;
+  if (result) {
+    ctx.body = { status: 'success', result: result.skillSet };
+  } else {
+    ctx.body = { status: 'success', result: null };
+  }
 };

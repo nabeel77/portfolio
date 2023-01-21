@@ -51,3 +51,26 @@
 {"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:50:12.732Z"}
 {"level":"error","message":"Cannot create property '_id' on string 'Javascript'","service":"portfolio","timestamp":"2023-01-20T15:50:43.930Z"}
 {"level":"error","message":"Cannot read properties of null (reading 'map')","service":"portfolio","timestamp":"2023-01-20T16:03:44.762Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:52:56.178Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:53:05.582Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:53:21.410Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:54:01.578Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:54:20.927Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:55:38.829Z"}
+{"level":"error","message":"result is not defined","service":"portfolio","timestamp":"2023-01-21T18:57:40.057Z"}
+{"level":"error","message":"result is not defined","service":"portfolio","timestamp":"2023-01-21T18:58:18.760Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:59:15.834Z"}
+{"level":"error","message":"comsole is not defined","service":"portfolio","timestamp":"2023-01-21T18:59:18.348Z"}
+{"level":"error","message":"skillSets.concat is not a function","service":"portfolio","timestamp":"2023-01-21T19:07:54.023Z"}
+{"level":"error","message":"Cannot read properties of null (reading 'map')","service":"portfolio","timestamp":"2023-01-21T20:01:30.082Z"}
+{"level":"error","message":"Cannot read properties of null (reading 'map')","service":"portfolio","timestamp":"2023-01-21T20:01:36.257Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:39:46.295Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:39:46.303Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:39:57.407Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:39:57.420Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:40:14.075Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:40:14.077Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:47:57.350Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:47:57.390Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:48:12.892Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-21T20:48:12.894Z"}

@@ -24,9 +24,7 @@ const AdminLogin = () => {
         username: formState.inputs.username.value,
         password: btoa(formState.inputs.password.value),
       }),
-    })
-      .then((res) => res.json())
-      .catch((err) => {});
+    }).then((res) => res.json());
     if (result.status === 'ok') {
       router.push('/admin/dashboard');
     }
