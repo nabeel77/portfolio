@@ -6,16 +6,16 @@ const Table = ({ headers, data }) => {
       <table>
         <thead>
           <tr>
-            {headers.map((head) => (
-              <th>{head}</th>
+            {headers.map((head, index) => (
+              <th key={index}>{head}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {data.map((row) => (
-            <tr>
-              {headers.map((head) => (
-                <td>{row[head]}</td>
+          {data.map((row, index) => (
+            <tr key={index}>
+              {data.map((head, index) => (
+                <td key={index}>{row[head]}</td>
               ))}
             </tr>
           ))}

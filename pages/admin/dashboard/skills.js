@@ -8,6 +8,8 @@ import usePopup from '../../../components/hooks/usePopup';
 import Popup from '../../../components/popup';
 import devIcons from '../../../components/devIcons';
 import SkillSets from '../../../components/skills';
+import { technologies } from '../../../components/devSkills';
+
 const Skills = () => {
   const animatedComponents = makeAnimated();
   const [formShow, setFormShow] = useState(false);
@@ -16,45 +18,7 @@ const Skills = () => {
   const [isShowing, showPopup, hidePopup, popupState, setError, setSuccess] =
     usePopup({ message: '' });
   const buttonStyles = `my-0 mx-auto text-center flex justify-center ${globalDesigns.responsiveFontStyles} ${globalDesigns.buttonStyles}`;
-  const options = [
-    { value: 'Html5', label: 'Html5' },
-    { value: 'Css3', label: 'Css3' },
-    { value: 'Sass', label: 'Sass' },
-    { value: 'Bootstrap', label: 'Bootstrap' },
-    { value: 'Tailwindcss', label: 'Tailwindcss' },
-    { value: 'Javascript', label: 'Javascript' },
-    { value: 'Typescript', label: 'Typescript' },
-    { value: 'Php', label: 'Php' },
-    { value: 'Python', label: 'Python' },
-    { value: 'Java', label: 'Java' },
-    { value: 'Node', label: 'Node' },
-    { value: 'Express', label: 'Express' },
-    { value: 'Koa', label: 'Koa' },
-    { value: 'React', label: 'React' },
-    { value: 'Redux', label: 'Redux' },
-    { value: 'GraphQL', label: 'GraphQL' },
-    { value: 'Apollo', label: 'Apollo' },
-    { value: 'Socket', label: 'Socket' },
-    { value: 'Axios', label: 'Axios' },
-    { value: 'Eslint', label: 'Eslint' },
-    { value: 'Prettier', label: 'Prettier' },
-    { value: 'Webpack', label: 'Webpack' },
-    { value: 'Next', label: 'Next' },
-    { value: 'Alpine', label: 'Alpine' },
-    { value: 'Mysql', label: 'Mysql' },
-    { value: 'Mongodb', label: 'Mongodb' },
-    { value: 'Firebase', label: 'Firebase' },
-    { value: 'Redis', label: 'Redis' },
-    { value: 'Vercel', label: 'Vercel' },
-    { value: 'Heroku', label: 'Heroku' },
-    { value: 'Docker', label: 'Docker' },
-    { value: 'Git', label: 'Git' },
-    { value: 'Github', label: 'Github' },
-    { value: 'GoogleCloud', label: 'GoogleCloud' },
-    { value: 'GoogleAnalytics', label: 'GoogleAnalytics' },
-    { value: 'Auth0', label: 'Auth0' },
-    { value: 'Pwa', label: 'Pwa' },
-  ];
+
   const handleFormState = useCallback(() => {
     setFormShow((formShow) => !formShow);
   }, []);
@@ -118,7 +82,7 @@ const Skills = () => {
         message={popupState.message}
         hide={hidePopup}
       />
-      <div className="flex flex-col gap-4 relative w-full pl-8 pr-8 pt-28">
+      <div className="flex flex-col gap-4 w-full pl-8 pr-8 pt-28">
         <Button
           styles={`w-10 h-10 ${buttonStyles}`}
           handleClick={handleFormState}
@@ -132,13 +96,13 @@ const Skills = () => {
         {formShow && (
           <div className="h-max w-full md:w-6/12 my-0 mx-auto flex flex-col gap-4">
             <Select
-              className="w-full text-black "
+              className="select-bordered w-full text-black "
               defaultValue={selectedOption}
               onChange={setSelectedOption}
               closeMenuOnSelect={false}
               components={animatedComponents}
               isMulti
-              options={options}
+              options={technologies}
             />
             <Button
               styles={`px-3.5 py-2 ${buttonStyles}`}

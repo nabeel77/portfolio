@@ -47,7 +47,9 @@ const usePopup = (initialState) => {
   };
 
   setTimeout(() => {
-    setIsShowing(false);
+    if (isShowing) {
+      setIsShowing(false);
+    }
   }, 3000);
 
   return [
