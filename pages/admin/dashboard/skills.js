@@ -6,7 +6,7 @@ import makeAnimated from 'react-select/animated';
 import Select from 'react-select';
 import usePopup from '../../../components/hooks/usePopup';
 import Popup from '../../../components/popup';
-import devIcons from '../../../components/devIcons';
+import devIcons from '../../../helpers/devIcons';
 import SkillSets from '../../../components/skills';
 import { technologies } from '../../../components/devSkills';
 
