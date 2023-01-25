@@ -13,6 +13,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { technologies } from '../../../constants/devSkills';
 import AllProjects from '../../../components/allProjects';
+import Loader from '../../../components/loader';
 
 const Projects = () => {
   const animatedComponents = makeAnimated();
@@ -27,7 +28,7 @@ const Projects = () => {
     url: { value: '' },
   });
   const [formShow, setFormShow] = useState(false);
-  const [allProjects, setAllProjects] = useState([]);
+  const [allProjects, setAllProjects] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState(null);
   const buttonStyles = `btn btn-active my-0 mx-auto text-center flex justify-center ${globalDesigns.responsiveFontStyles} ${globalDesigns.buttonStyles}`;
 
@@ -47,6 +48,7 @@ const Projects = () => {
     const cleanedTechnologyOptions = filterTechnologies(selectedOptions);
     const projectDetails = {
       projectName: formState.inputs.name.value,
+      projectId: formState.inputs.name.value.toLowerCase().split(' ').join('-'),
       projectDescription: formState.inputs.description.value,
       projectUrl: formState.inputs.url.value,
       technologies: cleanedTechnologyOptions,
@@ -63,7 +65,6 @@ const Projects = () => {
         method: 'POST',
         body: formData,
       });
-      console.log(formData.get('projectDetails'));
     },
     [formState, selectedOptions, imageUrlsState]
   );
@@ -77,10 +78,18 @@ const Projects = () => {
         setError(err.message);
         showPopup();
       });
-    if (result.status === 'success') {
-      setAllProjects(result.result);
+    if (result.status === 'success' && Array.isArray(result.result)) {
+      setAllProjects(<AllProjects projectsArr={result.result} />);
+    } else if (
+      result.status === 'success' &&
+      result.result === 'no data found'
+    ) {
+      setAllProjects(
+        <p className={`my-0 mx-auto ${globalDesigns.responsiveFontStyles}`}>
+          No projects found
+        </p>
+      );
     }
-    console.log(result);
   }, []);
 
   // Run when the component renders initially to get user's skillsets
@@ -97,7 +106,7 @@ const Projects = () => {
       showPopup();
     }
   }, [error]);
-
+  console.log(allProjects, ' ala');
   return (
     <div>
       <Head>
@@ -176,7 +185,7 @@ const Projects = () => {
             </form>
           </div>
         )}
-        <AllProjects projectsArr={allProjects} />
+        {allProjects || <Loader />}
       </div>
     </div>
   );

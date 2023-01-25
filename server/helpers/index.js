@@ -38,7 +38,6 @@ export const downloadImage = async (array) => {
     const projectsArr = array;
     let convertedImgArr = [];
     for (let i = 0; i < projectsArr.length; i++) {
-      console.log('running', ' ', i);
       if (Array.isArray(projectsArr[i].projectDetails.images)) {
         for (let j = 0; j < projectsArr[i].projectDetails.images.length; j++) {
           result = await getFileStream(

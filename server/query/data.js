@@ -72,7 +72,10 @@ export const addProjects = async (ctx, projectDetails) => {
 export const getProjects = async (ctx) => {
   try {
     const result = await ctx.db.collection('projects').find().toArray();
-    const projectData = await downloadImage(result);
+    const projectData = result || {
+      status: 'success',
+      result: 'no data found',
+    };
     return { status: 'success', result: projectData };
   } catch (err) {
     logger.error(err.message);

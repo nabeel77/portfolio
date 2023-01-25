@@ -4,7 +4,6 @@ import {
   addProjects,
   getProjects,
 } from '../../query';
-import { upload } from '../../s3';
 import { imagesUpload } from '../../helpers';
 
 export const addSkills = async (ctx) => {
@@ -27,11 +26,16 @@ export const getSkills = async (ctx) => {
 };
 
 export const addProjectsController = async (ctx) => {
-  const imagePathsObj = Array.isArray(ctx.request.files.image)
-    ? await imagesUpload(ctx.request.files.image)
-    : await upload(ctx.request.files.image);
+  const imagesArr = [];
+  let imagePathsArr;
+  if (!Array.isArray(ctx.request.files.image)) {
+    imagesArr.push(ctx.request.files.image);
+    imagePathsArr = await imagesUpload(imagesArr);
+  } else {
+    imagePathsArr = await imagesUpload(ctx.request.files.image);
+  }
   const projectDetails = JSON.parse(ctx.request.body.projectDetails);
-  projectDetails.images = imagePathsObj;
+  projectDetails.images = imagePathsArr;
   const result = await addProjects(ctx, projectDetails);
   ctx.body = result;
 };

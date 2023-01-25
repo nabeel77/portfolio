@@ -13,18 +13,21 @@ const AllProjects = ({ projectsArr }) => {
             key={index}
           >
             <figure className="w-full">
-              <img
-                src={`data:image/png;base64,${project.projectDetails.images[0]}`}
-              />
+              <img src={`${project.projectDetails.images[0].Location}`} />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
                 {project.projectDetails.projectName}
               </h2>
-              <div className="card-actions flex flex-row justify-start items-center cursor-pointer">
-                <span>Show project</span>
-                <Link className="arrow-animation" href="/projects/[pid].js">
-                  <HiArrowNarrowRight />
+              <div className="card-actions cursor-pointer">
+                <Link
+                  className="flex flex-row justify-between items-center"
+                  href={`/projects/${project.projectDetails.projectId}`}
+                >
+                  <span>Show project</span>
+                  <span className="arrow-animation ml-2">
+                    <HiArrowNarrowRight />
+                  </span>
                 </Link>
               </div>
             </div>
