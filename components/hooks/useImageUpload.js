@@ -1,8 +1,22 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useReducer } from 'react';
 
-const useImageUpload = () => {
-  const [imageUrl, setImageUrl] = useState(false);
+const imageUploadReducer = (state, action) => {
+  switch (action.type) {
+    case 'Add_IMAGE':
+      return [...state, action.imageUrl];
+    default:
+      return state;
+  }
+};
+
+const useImageUpload = (initialState) => {
+  const [imageUrlsState, dispatch] = useReducer(
+    imageUploadReducer,
+    initialState
+  );
+  const [imageUrl, setImageUrl] = useState('');
   const [error, setError] = useState(false);
+
   const changeErrorState = useCallback(
     () =>
       setInterval(() => {
@@ -13,21 +27,31 @@ const useImageUpload = () => {
     []
   );
 
-  changeErrorState();
-
   const onImageChange = useCallback((event) => {
     if (event.target.files && event.target.files[0]) {
       if (event.target.files[0].size > 3000000) {
-        setImageUrl('');
         setError(true);
       } else {
         let img = event.target.files[0];
-        setImageUrl(URL.createObjectURL(img));
+        addImage(img);
       }
     }
   }, []);
 
-  return [imageUrl, onImageChange, error, changeErrorState];
+  const addImage = useCallback((imageUrl) => {
+    dispatch({ type: 'Add_IMAGE', imageUrl });
+  }, []);
+
+  changeErrorState();
+
+  return [
+    imageUrl,
+    onImageChange,
+    error,
+    changeErrorState,
+    imageUrlsState,
+    addImage,
+  ];
 };
 
 export default useImageUpload;

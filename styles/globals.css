@@ -137,6 +137,52 @@ a {
   }
 }
 
+.arrow-animation {
+  animation-name: arrowright;
+  animation-duration: 0.51s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes arrowright {
+  from {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+.column div {
+  position: relative;
+  float: left;
+  width: 128px;
+  height: 128px;
+  margin: 0 0 0 25px;
+  padding: 0;
+}
+.column div:first-child {
+  margin-left: 0;
+}
+figure {
+  width: 128px;
+  height: 128px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
+.hover02 figure img {
+  width: 128px;
+  height: auto;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.hover02 figure:hover img {
+  width: 350px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

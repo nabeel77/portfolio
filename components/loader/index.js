@@ -1,8 +1,8 @@
 import React from 'react';
-import responsiveGlobalDesigns from '../globalDesigns';
+import globalDesigns from '../../constants/globalDesigns';
 
 const Loader = () => {
-  const textClasses = `${responsiveGlobalDesigns.responsiveFontStyles} absolute top-9`;
+  const textClasses = `${globalDesigns.responsiveFontStyles} absolute top-9`;
   return (
     <div className="w-sfull h-full flex flex-wrap justify-center items-center flex-row place-items-center bg-gray-loadingBg">
       <div className="flex place-content-center h-max w-max bg-transparent relative">

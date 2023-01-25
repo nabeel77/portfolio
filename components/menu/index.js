@@ -10,7 +10,7 @@ const Menu = (props) => {
     );
   });
   return (
-    <div className="h-20 w-full bg-base-100 mt-0 fixed flex justify-center items-center gap-10">
+    <div className="h-20 w-full bg-base-100 mt-0 fixed flex justify-center items-center gap-10 z-99999999">
       {links}
     </div>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
-import responsiveGlobalDesigns from '../globalDesigns';
+import globalDesigns from '../../constants/globalDesigns';
 import { BiXCircle } from 'react-icons/bi';
 
 const Popup = (props) => {
-  const textClasses = `${responsiveGlobalDesigns.responsiveFontStyles}`;
+  const textClasses = `${globalDesigns.responsiveFontStyles}`;
   const borderClasses = `border border-solid ${
     props.state && props.state.border
   }`;

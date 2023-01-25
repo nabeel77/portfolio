@@ -80,6 +80,9 @@ module.exports = {
           'winter',
         ],
       },
+      zIndex: {
+        99999999: '99999999',
+      },
     },
   },
   plugins: [require('daisyui')],

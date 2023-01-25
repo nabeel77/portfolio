@@ -4,18 +4,20 @@ import ImageUpload from '../../../components/imageUpload';
 import useImageUpload from '../../../components/hooks/useImageUpload';
 import Popup from '../../../components/popup';
 import usePopup from '../../../components/hooks/usePopup';
-import globalDesigns from '../../../components/globalDesigns';
+import globalDesigns from '../../../constants/globalDesigns';
 import Button from '../../../components/button';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import Input from '../../../components/input';
 import useForm from '../../../components/hooks/useForm';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { technologies } from '../../../components/devSkills';
+import { technologies } from '../../../constants/devSkills';
+import AllProjects from '../../../components/allProjects';
 
 const Projects = () => {
   const animatedComponents = makeAnimated();
-  const [imageUrl, onImageChange, error, changeErrorState] = useImageUpload();
+  const [imageUrl, onImageChange, error, changeErrorState, imageUrlsState] =
+    useImageUpload([]);
   const [isShowing, showPopup, hidePopup, popupState, setError] = usePopup({
     message: '',
   });
@@ -25,6 +27,7 @@ const Projects = () => {
     url: { value: '' },
   });
   const [formShow, setFormShow] = useState(false);
+  const [allProjects, setAllProjects] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState(null);
   const buttonStyles = `btn btn-active my-0 mx-auto text-center flex justify-center ${globalDesigns.responsiveFontStyles} ${globalDesigns.buttonStyles}`;
 
@@ -33,23 +36,60 @@ const Projects = () => {
   }, []);
 
   const filterTechnologies = useCallback((technologies) => {
-    return technologies.map((item) => item.value);
+    return technologies && technologies.map((item) => item.value);
   }, []);
+
+  const createFormData = useCallback(() => {
+    let formData = new FormData();
+    for (let i = 0; i < imageUrlsState.length; i++) {
+      formData.append('image', imageUrlsState[i]);
+    }
+    const cleanedTechnologyOptions = filterTechnologies(selectedOptions);
+    const projectDetails = {
+      projectName: formState.inputs.name.value,
+      projectDescription: formState.inputs.description.value,
+      projectUrl: formState.inputs.url.value,
+      technologies: cleanedTechnologyOptions,
+    };
+    formData.append('projectDetails', JSON.stringify(projectDetails));
+    return formData;
+  }, [formState, selectedOptions, imageUrlsState]);
 
   const submitHandler = useCallback(
     async (event) => {
       event.preventDefault();
-      const cleanedTechnologyOptions = filterTechnologies(selectedOptions);
-      const formData = {
-        projectName: formState.inputs.name.value,
-        projectDescription: formState.inputs.description.value,
-        projectUrl: formState.inputs.url.value,
-        technologies: cleanedTechnologyOptions,
-      };
-      console.log(formData);
+      const formData = createFormData();
+      const res = await fetch('/api/projects', {
+        method: 'POST',
+        body: formData,
+      });
+      console.log(formData.get('projectDetails'));
     },
-    [formState, selectedOptions, imageUrl]
+    [formState, selectedOptions, imageUrlsState]
   );
+
+  const getProjects = useCallback(async () => {
+    const result = await fetch('/api/projects', {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .catch((err) => {
+        setError(err.message);
+        showPopup();
+      });
+    if (result.status === 'success') {
+      setAllProjects(result.result);
+    }
+    console.log(result);
+  }, []);
+
+  // Run when the component renders initially to get user's skillsets
+  useEffect(() => {
+    const skills = async () => {
+      await getProjects();
+    };
+    skills();
+  }, []);
 
   useEffect(() => {
     if (error) {
@@ -69,7 +109,7 @@ const Projects = () => {
         message={popupState.message}
         hide={hidePopup}
       />
-      <div className="w-full pl-8 pt-28 pb-28 flex flex-col gap-5">
+      <div className="w-full px-8 py-28 flex flex-col gap-5">
         <Button
           styles={`w-10 h-10 ${buttonStyles}`}
           handleClick={handleFormState}
@@ -81,7 +121,7 @@ const Projects = () => {
           )}
         </Button>
         {formShow && (
-          <div className="z-50 my-0 mx-auto p-5 flex m-4 rounded shadow bg-base-200 w-9/12">
+          <div className="z-50 my-0 mx-auto p-5 flex m-4 rounded shadow bg-base-200 w-full lg:w-9/12">
             <form
               onSubmit={submitHandler}
               className="p-5 w-full flex flex-col justify-center items-center gap-4"
@@ -126,7 +166,7 @@ const Projects = () => {
 
               <ImageUpload
                 onImageChange={onImageChange}
-                imageUrl={imageUrl}
+                imageUrls={imageUrlsState}
                 error={error}
                 changeErrorState={changeErrorState}
               />
@@ -136,6 +176,7 @@ const Projects = () => {
             </form>
           </div>
         )}
+        <AllProjects projectsArr={allProjects} />
       </div>
     </div>
   );
