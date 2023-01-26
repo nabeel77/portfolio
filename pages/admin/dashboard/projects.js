@@ -78,6 +78,7 @@ const Projects = () => {
         setError(err.message);
         showPopup();
       });
+    console.log(result, ' i am the result');
     if (result.status === 'success' && Array.isArray(result.result)) {
       setAllProjects(<AllProjects projectsArr={result.result} />);
     } else if (
