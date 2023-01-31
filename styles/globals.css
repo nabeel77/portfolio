@@ -6,7 +6,11 @@
 }
 @font-face {
   font-family: Orbitron;
-  src: url('/fonts/orbitron-Regular.ttf');
+  src: url('/fonts/Orbitron-Regular.ttf');
+}
+@font-face {
+  font-family: Orbitron-bold;
+  src: url('/fonts/Orbitron-bold.ttf');
 }
 :root {
   --max-width: 1100px;
@@ -109,6 +113,57 @@ a {
   animation: clippath 3s infinite linear;
 }
 
+.arrow-animation {
+  animation-name: arrowright;
+  animation-duration: 0.51s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.arrow-down {
+  animation-name: arrowdown;
+  animation-duration: 0.51s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#name,
+#profesion {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.arrow-container {
+  clip-path: polygon(
+    0% -9%,
+    96% -3%,
+    101% 66%,
+    -94% 99%,
+    103% 65%,
+    87% 205%,
+    -5% 111%
+  );
+}
+
+.line {
+  text-align: center !important;
+}
+
+.arrow {
+  transform: translateY(170px);
+}
+.char {
+  transform: translateY(115px);
+  transition: transform 0.5s;
+  font-family: Orbitron-bold;
+}
+
+.bouncing {
+  @apply text-accent;
+  animation: rubberband 800ms alternate ease-out;
+}
+
 @keyframes clippath {
   0%,
   100% {
@@ -126,14 +181,6 @@ a {
   }
 }
 
-.arrow-animation {
-  animation-name: arrowright;
-  animation-duration: 0.51s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
 @keyframes arrowright {
   from {
     transform: translateX(-5px);
@@ -143,41 +190,36 @@ a {
   }
 }
 
-.html:hover {
-  fill: #e34f26;
+@keyframes arrowdown {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
 }
-
-.css:hover {
-  fill: #1572b6;
-}
-
-.column div {
-  position: relative;
-  float: left;
-  width: 128px;
-  height: 128px;
-  margin: 0 0 0 25px;
-  padding: 0;
-}
-.column div:first-child {
-  margin-left: 0;
-}
-figure {
-  width: 128px;
-  height: 128px;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  overflow: hidden;
-}
-.hover02 figure img {
-  width: 128px;
-  height: auto;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-.hover02 figure:hover img {
-  width: 350px;
+@keyframes rubberband {
+  0% {
+    transform: scaleX(1);
+  }
+  40% {
+    transform: scaleX(1.12) scaleY(0.75);
+  }
+  55% {
+    transform: scaleX(0.85) scaleY(1);
+  }
+  65% {
+    transform: scaleX(1.09) scaleY(0.85);
+  }
+  75% {
+    transform: scaleX(0.9) scaleY(1);
+  }
+  90% {
+    transform: scaleX(1.05) scaleY(0.95);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
 }
 
 @media (prefers-color-scheme: dark) {

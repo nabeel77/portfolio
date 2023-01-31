@@ -4,6 +4,17 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  daisyui: {
+    themes: [
+      {
+        luxury: {
+          ...require('daisyui/src/colors/themes')['[data-theme=luxury]'],
+          accent: '#dca54c',
+          'primary-focus': 'mediumblue',
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
       screens: {

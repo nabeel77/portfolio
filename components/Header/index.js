@@ -5,7 +5,7 @@ import { BiX } from 'react-icons/bi';
 const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
   return (
     <>
-      <header className="fixed w-full h-24 bg-base-200 p-5">
+      <header className="fixed w-full h-24 bg-base-200 p-5 z-99999999">
         <div className="w-full h-full flex justify-center items-center">
           <button
             className="flex-1 md:flex-none flex justify-start cursor-pointer text-primary"
