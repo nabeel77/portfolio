@@ -6,8 +6,8 @@ import makeAnimated from 'react-select/animated';
 import Select from 'react-select';
 import usePopup from '../../../components/hooks/usePopup';
 import Popup from '../../../components/popup';
-import devIcons from '../../../constants/devIcons';
-import SkillSets from '../../../components/skills';
+import { devIcons } from '../../../constants/devIcons';
+import SkillSets from '../../../components/Skills';
 import { technologies } from '../../../constants/devSkills';
 
 const Skills = () => {

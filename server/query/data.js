@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import { logger } from '../logger';
-import { downloadImage, convertBufferToImage } from '../helpers';
 
 dotenv.config();
 

@@ -22,6 +22,12 @@ module.exports = {
           lighter: '#d3d3d3',
           loadingBg: 'rgba(211, 211, 211, 0.1)',
         },
+        orange: {
+          html: '#e34f26',
+        },
+        black: {
+          opac: 'rgba(35, 36, 35, .1)',
+        },
       },
       width: {
         30: '30%',
@@ -82,6 +88,9 @@ module.exports = {
       },
       zIndex: {
         99999999: '99999999',
+      },
+      gridColumn: {
+        'span-5': '2 / span 5',
       },
     },
   },

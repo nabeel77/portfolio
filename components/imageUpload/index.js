@@ -21,7 +21,7 @@ const ImageUpload = ({ onImageChange, imageUrls }) => {
       <div className="w-full flex flex-wrap justify-center items-center w-full gap-5">
         {images}
       </div>
-      <div className="w-4/12 my-0 mx-auto flex flex-col gap-5">
+      <div className="my-0 mx-auto flex flex-col gap-5">
         <input
           className="file-input w-full max-w-xs"
           type="file"
