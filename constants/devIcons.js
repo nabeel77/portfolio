@@ -1,12 +1,13 @@
-const devIcons = {
+export const devIcons = {
   Html5: (
     <svg
+      key="0"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       fill="currentColor"
       viewBox="0 0 24 24"
-      className="text-neutral-content hover:text-[#E34F26] transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-150"
+      className="html transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-150"
     >
       <title>html5</title>
       <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path>
@@ -14,12 +15,13 @@ const devIcons = {
   ),
   Css3: (
     <svg
+      key="1"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       fill="currentColor"
       viewBox="0 0 24 24"
-      className="text-neutral-content hover:text-[#1572B6] transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-150"
+      className="css transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-150"
     >
       <title>css3</title>
       <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"></path>
@@ -27,6 +29,7 @@ const devIcons = {
   ),
   Sass: (
     <svg
+      key="2"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -40,6 +43,7 @@ const devIcons = {
   ),
   Bootstrap: (
     <svg
+      key="3"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -53,6 +57,7 @@ const devIcons = {
   ),
   Tailwindcss: (
     <svg
+      key="4"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -66,6 +71,7 @@ const devIcons = {
   ),
   Javascript: (
     <svg
+      key="5"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -79,6 +85,7 @@ const devIcons = {
   ),
   Typescript: (
     <svg
+      key="6"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -92,6 +99,7 @@ const devIcons = {
   ),
   Php: (
     <svg
+      key="7"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -105,6 +113,7 @@ const devIcons = {
   ),
   Python: (
     <svg
+      key="8"
       width="24"
       height="24"
       fill="currentColor"
@@ -119,6 +128,7 @@ const devIcons = {
   ),
   Java: (
     <svg
+      key="9"
       width="24"
       height="24"
       fill="currentColor"
@@ -131,8 +141,9 @@ const devIcons = {
       <path d="M12.557 23.22c0 0-0.982 0.571 0.699 0.765 2.037 0.232 3.079 0.199 5.324-0.226 0 0 0.59 0.37 1.415 0.691-5.033 2.157-11.39-0.125-7.437-1.23zM11.942 20.405c0 0-1.102 0.816 0.581 0.99 2.176 0.224 3.895 0.243 6.869-0.33 0 0 0.411 0.417 1.058 0.645-6.085 1.779-12.863 0.14-8.508-1.305zM17.127 15.63c1.24 1.428-0.326 2.713-0.326 2.713s3.149-1.625 1.703-3.661c-1.351-1.898-2.386-2.841 3.221-6.093 0 0-8.801 2.198-4.598 7.042zM23.783 25.302c0 0 0.727 0.599-0.801 1.062-2.905 0.88-12.091 1.146-14.643 0.035-0.917-0.399 0.803-0.953 1.344-1.069 0.564-0.122 0.887-0.1 0.887-0.1-1.020-0.719-6.594 1.411-2.831 2.021 10.262 1.664 18.706-0.749 16.044-1.95zM13.029 17.489c0 0-4.673 1.11-1.655 1.513 1.274 0.171 3.814 0.132 6.181-0.066 1.934-0.163 3.876-0.51 3.876-0.51s-0.682 0.292-1.175 0.629c-4.745 1.248-13.911 0.667-11.272-0.609 2.232-1.079 4.046-0.956 4.046-0.956zM21.412 22.174c4.824-2.506 2.593-4.915 1.037-4.591-0.382 0.079-0.552 0.148-0.552 0.148s0.142-0.222 0.412-0.318c3.079-1.083 5.448 3.193-0.994 4.887-0 0 0.075-0.067 0.097-0.126zM18.503 3.337c0 0 2.671 2.672-2.534 6.781-4.174 3.296-0.952 5.176-0.002 7.323-2.436-2.198-4.224-4.133-3.025-5.934 1.761-2.644 6.638-3.925 5.56-8.17zM13.503 28.966c4.63 0.296 11.74-0.164 11.908-2.355 0 0-0.324 0.831-3.826 1.49-3.952 0.744-8.826 0.657-11.716 0.18 0 0 0.592 0.49 3.635 0.685z"></path>
     </svg>
   ),
-  Nodejs: (
+  Node: (
     <svg
+      key="10"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -146,6 +157,7 @@ const devIcons = {
   ),
   Express: (
     <svg
+      key="11"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -159,6 +171,7 @@ const devIcons = {
   ),
   Koa: (
     <svg
+      key="12"
       width="24"
       height="24"
       fill="currentColor"
@@ -172,6 +185,7 @@ const devIcons = {
   ),
   React: (
     <svg
+      key="13"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -185,6 +199,7 @@ const devIcons = {
   ),
   Redux: (
     <svg
+      key="14"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -198,6 +213,7 @@ const devIcons = {
   ),
   Next: (
     <svg
+      key="15"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -211,6 +227,7 @@ const devIcons = {
   ),
   Alpine: (
     <svg
+      key="16"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -224,6 +241,7 @@ const devIcons = {
   ),
   GraphQL: (
     <svg
+      key="17"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -237,6 +255,7 @@ const devIcons = {
   ),
   Apollo: (
     <svg
+      key="18"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -250,6 +269,7 @@ const devIcons = {
   ),
   Socket: (
     <svg
+      key="19"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -263,6 +283,7 @@ const devIcons = {
   ),
   Axios: (
     <svg
+      key="20"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -276,6 +297,7 @@ const devIcons = {
   ),
   Eslint: (
     <svg
+      key="21"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -289,6 +311,7 @@ const devIcons = {
   ),
   Prettier: (
     <svg
+      key="22"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -302,6 +325,7 @@ const devIcons = {
   ),
   Stylelint: (
     <svg
+      key="23"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -315,6 +339,7 @@ const devIcons = {
   ),
   Mongodb: (
     <svg
+      key="24"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -328,6 +353,7 @@ const devIcons = {
   ),
   Mysql: (
     <svg
+      key="25"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -341,6 +367,7 @@ const devIcons = {
   ),
   Postgresql: (
     <svg
+      key="26"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -354,6 +381,7 @@ const devIcons = {
   ),
   Webpack: (
     <svg
+      key="27"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -367,6 +395,7 @@ const devIcons = {
   ),
   Pwa: (
     <svg
+      key="28"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -380,6 +409,7 @@ const devIcons = {
   ),
   Git: (
     <svg
+      key="29"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -393,6 +423,7 @@ const devIcons = {
   ),
   Github: (
     <svg
+      key="30"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -406,6 +437,7 @@ const devIcons = {
   ),
   Docker: (
     <svg
+      key="31"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -419,6 +451,7 @@ const devIcons = {
   ),
   Auth0: (
     <svg
+      key="32"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -432,6 +465,7 @@ const devIcons = {
   ),
   GoogleAnalytics: (
     <svg
+      key="33"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -445,6 +479,7 @@ const devIcons = {
   ),
   GoogleCloud: (
     <svg
+      key="34"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -458,6 +493,7 @@ const devIcons = {
   ),
   Heroku: (
     <svg
+      key="35"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -471,6 +507,7 @@ const devIcons = {
   ),
   Vercel: (
     <svg
+      key="36"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -484,6 +521,7 @@ const devIcons = {
   ),
   Magento: (
     <svg
+      key="37"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -497,6 +535,7 @@ const devIcons = {
   ),
   Firebase: (
     <svg
+      key="38"
       width="24"
       height="24"
       fill="currentColor"
@@ -510,6 +549,7 @@ const devIcons = {
   ),
   Redis: (
     <svg
+      key="39"
       width="24"
       height="24"
       fill="currentColor"
@@ -523,4 +563,45 @@ const devIcons = {
   ),
 };
 
-export default devIcons;
+export const devIconColors = {
+  Html5: 'text-[#E34F26]',
+  Css3: 'text-[#1572B6]',
+  Sass: 'text-[#CC6699]',
+  Bootstrap: 'text-[#7952B3]',
+  Tailwindcss: 'text-[#06B6D4]',
+  Javascript: 'text-[#F7DF1E]',
+  Typescript: 'text-[#3178C6]',
+  Php: 'text-[#777BB4]',
+  Python: 'text-[#EE672F]',
+  Java: 'text-[#EE672F]',
+  Node: 'text-[#339933]',
+  Express: 'text-[#000000]',
+  Koa: 'text-[#EE672F]',
+  React: 'text-[#61DAFB]',
+  Redux: 'text-[#764ABC]',
+  Next: 'text-[#000000]',
+  Alpine: 'text-[#8BC0D0]',
+  GraphQL: 'text-[#E10098]',
+  Apollo: 'text-[#311C87]',
+  Socket: 'text-[#010101]',
+  Axios: 'text-[#5A29E4]',
+  Eslint: 'text-[#4B32C3]',
+  Prettier: 'text-[#F7B93E]',
+  Stylelint: 'text-[#263238]',
+  Mongodb: 'text-[#47A248]',
+  Mysql: 'text-[#4479A1]',
+  Postgresql: 'text-[#4169E1]',
+  Webpack: '[#8DD6F9]',
+  Pwa: 'text-[#5A0FC8]',
+  Git: 'text-[#F05032]',
+  Github: 'text-[#181717]',
+  Docker: 'text-[#2496ED]',
+  Auth0: 'text-[#EB5424]',
+  GoogleAnalytics: 'text-[#E37400]',
+  GoogleCloud: 'text-[#4285F4]',
+  Heroku: 'text-[#430098]',
+  Vercel: 'text-[#000000]',
+  Magento: 'text-[#EE672F]',
+  Firebase: 'text-[#EE672F]',
+  Redis: 'text-[#EE672F]',
+};

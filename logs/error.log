@@ -12,3 +12,5 @@
 {"level":"error","message":"_logger.default.error is not a function","service":"portfolio","timestamp":"2023-01-25T14:21:50.928Z"}
 {"level":"error","message":"_logger.default.error is not a function","service":"portfolio","timestamp":"2023-01-25T14:22:34.246Z"}
 {"level":"error","message":"_logger.default.error is not a function","service":"portfolio","timestamp":"2023-01-25T14:22:38.376Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-30T11:13:01.202Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-30T11:13:01.219Z"}

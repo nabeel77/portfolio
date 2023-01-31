@@ -1,27 +1,29 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Head from 'next/head';
-import ImageUpload from '../../../components/imageUpload';
+import ImageUpload from '../../../components/ImageUpload';
 import useImageUpload from '../../../components/hooks/useImageUpload';
 import Popup from '../../../components/popup';
 import usePopup from '../../../components/hooks/usePopup';
 import globalDesigns from '../../../constants/globalDesigns';
-import Button from '../../../components/button';
+import Button from '../../../components/Button';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import Input from '../../../components/input';
 import useForm from '../../../components/hooks/useForm';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { technologies } from '../../../constants/devSkills';
-import AllProjects from '../../../components/allProjects';
-import Loader from '../../../components/loader';
+import AllProjects from '../../../components/AllProjects';
+import Loader from '../../../components/Loader';
+import { fetchRequest } from '../../../helpers';
 
 const Projects = () => {
   const animatedComponents = makeAnimated();
   const [imageUrl, onImageChange, error, changeErrorState, imageUrlsState] =
     useImageUpload([]);
-  const [isShowing, showPopup, hidePopup, popupState, setError] = usePopup({
-    message: '',
-  });
+  const [isShowing, showPopup, hidePopup, popupState, setError, setSuccess] =
+    usePopup({
+      message: '',
+    });
   const [formState, inputHandler] = useForm({
     name: { value: '' },
     description: { value: '' },
@@ -61,10 +63,17 @@ const Projects = () => {
     async (event) => {
       event.preventDefault();
       const formData = createFormData();
-      const res = await fetch('/api/projects', {
+      const res = await fetchRequest('/api/projects', {
         method: 'POST',
         body: formData,
       });
+      if (res.status === 'success') {
+        setSuccess(res.message);
+        showPopup();
+      } else {
+        setError(res.message);
+        showPopup();
+      }
     },
     [formState, selectedOptions, imageUrlsState]
   );
@@ -78,7 +87,6 @@ const Projects = () => {
         setError(err.message);
         showPopup();
       });
-    console.log(result, ' i am the result');
     if (result.status === 'success' && Array.isArray(result.result)) {
       setAllProjects(<AllProjects projectsArr={result.result} />);
     } else if (
@@ -107,7 +115,6 @@ const Projects = () => {
       showPopup();
     }
   }, [error]);
-  console.log(allProjects, ' ala');
   return (
     <div>
       <Head>
@@ -119,7 +126,7 @@ const Projects = () => {
         message={popupState.message}
         hide={hidePopup}
       />
-      <div className="w-full px-8 py-28 flex flex-col gap-5">
+      <div className="w-full py-28 flex flex-col gap-5">
         <Button
           styles={`w-10 h-10 ${buttonStyles}`}
           handleClick={handleFormState}

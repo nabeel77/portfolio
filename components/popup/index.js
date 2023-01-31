@@ -8,11 +8,9 @@ const Popup = (props) => {
     props.state && props.state.border
   }`;
   const icon = props.state && props.state.icon;
-  const transition = props.isShowing
-    ? 'transition-all duration-500 ease top-10'
-    : 'transition-all duration-500 ease -top-40 hidden';
+  const conditionalStyles = props.isShowing ? 'block' : 'hidden';
   const popup = (
-    <div className={`${transition} md:w-max h-max relative`}>
+    <div className={`${conditionalStyles} top-20 md:w-max h-max relative`}>
       <button
         className="absolute top-2 right-2 h-6 w-6 text-center"
         onClick={props.hide}

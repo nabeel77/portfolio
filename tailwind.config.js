@@ -4,6 +4,37 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  daisyui: {
+    themes: [
+      {
+        luxury: {
+          ...require('daisyui/src/colors/themes')['[data-theme=luxury]'],
+          accent: '#dca54c',
+          'primary-focus': 'mediumblue',
+        },
+        light: {
+          ...require('daisyui/src/colors/themes')['[data-theme=light]'],
+          'primary-focus': 'mediumblue',
+        },
+        night: {
+          ...require('daisyui/src/colors/themes')['[data-theme=night]'],
+          'primary-focus': 'mediumblue',
+        },
+        forest: {
+          ...require('daisyui/src/colors/themes')['[data-theme=forest]'],
+          'primary-focus': 'mediumblue',
+        },
+        lemonade: {
+          ...require('daisyui/src/colors/themes')['[data-theme=lemonade]'],
+          'primary-focus': 'mediumblue',
+        },
+        halloween: {
+          ...require('daisyui/src/colors/themes')['[data-theme=halloween]'],
+          'primary-focus': 'mediumblue',
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
       screens: {
@@ -21,6 +52,12 @@ module.exports = {
         gray: {
           lighter: '#d3d3d3',
           loadingBg: 'rgba(211, 211, 211, 0.1)',
+        },
+        orange: {
+          html: '#e34f26',
+        },
+        black: {
+          opac: 'rgba(35, 36, 35, .1)',
         },
       },
       width: {
@@ -82,6 +119,9 @@ module.exports = {
       },
       zIndex: {
         99999999: '99999999',
+      },
+      gridColumn: {
+        'span-5': '2 / span 5',
       },
     },
   },

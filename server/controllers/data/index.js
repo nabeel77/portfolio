@@ -4,7 +4,7 @@ import {
   addProjects,
   getProjects,
 } from '../../query';
-import { imagesUpload } from '../../helpers';
+import { imagesUpload } from '../../serverHelpers';
 
 export const addSkills = async (ctx) => {
   const result = await userSkills(ctx, ctx.request.body);

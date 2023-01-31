@@ -16,7 +16,6 @@ rl.question('Enter username: ', (username) => {
       try {
         const db = await MongoClientConnection.Get();
         const res = await db.insert(adminUserData);
-        console.log(res);
       } catch (e) {
         logger.error(e);
       }
