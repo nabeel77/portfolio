@@ -39,7 +39,7 @@ const useHeader = () => {
       <a
         key={index}
         className={linkStyles}
-        href={`#${item}`}
+        href={`#${item.toLowerCase()}`}
         onClick={scrollSmoothHandler(index)}
       >
         {item}
