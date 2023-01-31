@@ -25,7 +25,6 @@ const useHeader = () => {
   };
 
   const scrollSmoothHandler = (index) => () => {
-    console.log(router.asPath);
     isMobileMenuOpen && setIsMobileMenuOpen(false);
     if (router.asPath === '/') {
       scrollRefs.current[index].current.scrollIntoView({ behavior: 'smooth' });

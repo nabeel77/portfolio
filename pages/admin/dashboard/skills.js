@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import Button from '../../../components/button';
+import Button from '../../../components/Button';
 import globalDesigns from '../../../constants/globalDesigns';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import makeAnimated from 'react-select/animated';
