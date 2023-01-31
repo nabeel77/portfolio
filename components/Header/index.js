@@ -1,8 +1,12 @@
 import React from 'react';
 import { BiMenu } from 'react-icons/bi';
 import { BiX } from 'react-icons/bi';
+import useSelect from '../hooks/useSelect';
+import { options } from '../../constants/options';
+import Select from '../Select';
 
 const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
+  const [value, onChange] = useSelect(options[0], true);
   return (
     <>
       <header className="fixed w-full h-24 bg-base-200 p-5 z-99999999">
@@ -16,6 +20,13 @@ const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
           <nav className="flex-row gap-5 flex-1 justify-center items-center hidden md:flex">
             {links}
           </nav>
+          <div>
+            <Select
+              options={options}
+              onChange={onChange}
+              defaultValue={value}
+            />
+          </div>
         </div>
       </header>
       <div className={`${!isMobileMenuOpen && 'hidden'} fixed w-full h-full`}>

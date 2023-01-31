@@ -12,6 +12,26 @@ module.exports = {
           accent: '#dca54c',
           'primary-focus': 'mediumblue',
         },
+        light: {
+          ...require('daisyui/src/colors/themes')['[data-theme=light]'],
+          'primary-focus': 'mediumblue',
+        },
+        night: {
+          ...require('daisyui/src/colors/themes')['[data-theme=night]'],
+          'primary-focus': 'mediumblue',
+        },
+        forest: {
+          ...require('daisyui/src/colors/themes')['[data-theme=forest]'],
+          'primary-focus': 'mediumblue',
+        },
+        lemonade: {
+          ...require('daisyui/src/colors/themes')['[data-theme=lemonade]'],
+          'primary-focus': 'mediumblue',
+        },
+        halloween: {
+          ...require('daisyui/src/colors/themes')['[data-theme=halloween]'],
+          'primary-focus': 'mediumblue',
+        },
       },
     ],
   },

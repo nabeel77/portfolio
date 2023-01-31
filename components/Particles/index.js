@@ -3,13 +3,12 @@ import { loadFull } from 'tsparticles';
 
 const MovingParticles = () => {
   const particlesInit = async (main) => {
-    console.log(main);
     await loadFull(main);
   };
 
   return (
     <Particles
-      className="w-full h-full absolute z-[-100]"
+      className="w-full h-full absolute left-0 z-[-100]"
       id="tsparticles"
       init={particlesInit}
       options={{
@@ -62,7 +61,7 @@ const MovingParticles = () => {
               default: 'bounce',
             },
             random: false,
-            speed: 2,
+            speed: 1,
             straight: false,
           },
           number: {
@@ -84,7 +83,7 @@ const MovingParticles = () => {
         },
         fullScreen: {
           enable: false,
-          zIndex: -1, // or any value is good for you, if you use -1 set `interactivity.detectsOn` to `"window"` if you need mouse interactions
+          zIndex: -1,
         },
         detectRetina: true,
       }}
