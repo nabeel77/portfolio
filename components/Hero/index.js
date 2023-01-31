@@ -1,10 +1,12 @@
 import useHero from '../hooks/useHero';
 import { HiArrowNarrowDown } from 'react-icons/hi';
+import MovingParticles from '../Particles';
 
 const Hero = () => {
   useHero(['#name', '#profesion'], '.arrow');
   return (
     <section id="hero" className="w-full h-full">
+      <MovingParticles />
       <div className="h-[75%] relative flex flex-col gap-4 justify-center items-center">
         <h1
           id="name"
