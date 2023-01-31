@@ -2,7 +2,7 @@ import React from 'react';
 import Input from '../../components/input';
 import { useRouter } from 'next/router';
 import useForm from '../../components/hooks/useForm';
-import responsiveGlobalDesigns from '../../components/globalDesigns';
+import globalDesigns from '../../constants/globalDesigns';
 
 const AdminLogin = () => {
   const router = useRouter();
@@ -11,7 +11,7 @@ const AdminLogin = () => {
     password: { value: '' },
   });
 
-  const inputStyles = `${responsiveGlobalDesigns.responsiveFontStyles} bg-transparent w-full py-3 px-2 border-b border-solid border-blue-darker uppercase text-blue-darker placeholder-blue-darker outline-none`;
+  const inputStyles = `${globalDesigns.responsiveFontStyles} bg-transparent w-full py-3 px-2 border-b border-solid border-blue-darker uppercase text-blue-darker placeholder-blue-darker outline-none`;
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -53,7 +53,7 @@ const AdminLogin = () => {
         />
         <button
           type="submit"
-          className={`${responsiveGlobalDesigns.responsiveFontStyles} bg-blue-darker w-1/2 rounded py-2.5 uppercase border border-solid border-blue-darker hover:bg-transparent hover:text-blue-darker`}
+          className={`${globalDesigns.responsiveFontStyles} bg-blue-darker w-1/2 rounded py-2.5 uppercase border border-solid border-blue-darker hover:bg-transparent hover:text-blue-darker`}
         >
           Login
         </button>

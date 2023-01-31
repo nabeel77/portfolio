@@ -4,6 +4,7 @@ import 'isomorphic-fetch';
 import next from 'next';
 import Koa from 'koa';
 import Router from 'koa-router';
+import koaBody from 'koa-body';
 import UserRouter from './routes/user';
 import DataRouter from './routes/data';
 import MongoClientConnection from './db';

@@ -1,5 +1,5 @@
 import { checkUserCredentials, authenticate, getUser } from './user';
-import { userSkills, getUserSkills } from './data';
+import { userSkills, getUserSkills, addProjects, getProjects } from './data';
 
 export {
   checkUserCredentials,
@@ -7,4 +7,6 @@ export {
   getUser,
   userSkills,
   getUserSkills,
+  addProjects,
+  getProjects,
 };

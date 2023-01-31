@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import { logger } from '../logger';
+import { downloadImage, convertBufferToImage } from '../helpers';
 
 dotenv.config();
 
@@ -55,5 +56,26 @@ export const updateSkills = async (ctx, username, skills) => {
   } catch (err) {
     logger.error(err.message);
     return { status: 'error', message: 'Failed to update, try again.' };
+  }
+};
+
+export const addProjects = async (ctx, projectDetails) => {
+  try {
+    await ctx.db.collection('projects').insert({ projectDetails });
+    return { status: 'success', message: 'Project added successfully' };
+  } catch (err) {
+    logger.error(err.message);
+    return { status: 'error', message: 'Failed to add project, try again.' };
+  }
+};
+
+export const getProjects = async (ctx) => {
+  try {
+    const result = await ctx.db.collection('projects').find().toArray();
+    const projectData = result.length ? result : 'no data found';
+    return { status: 'success', result: projectData };
+  } catch (err) {
+    logger.error(err.message);
+    return { status: 'error', message: 'Failed to get projects, try again.' };
   }
 };

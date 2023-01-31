@@ -38,6 +38,7 @@ const Input = (props) => {
         onChange={changeHandler}
         value={inputState.value}
         className={props.classNames}
+        placeholder={props.placeholder}
       />
     );
   return <>{element}</>;

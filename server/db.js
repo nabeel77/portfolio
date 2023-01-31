@@ -21,7 +21,6 @@ const MongoClientConnection = (() => {
     try {
       instance++; // this is just to count how many times our singleton is called.
       console.log(`DbConnection called ${instance} times`);
-
       if (db != null) {
         console.log(`db connection is already alive`);
         return db;

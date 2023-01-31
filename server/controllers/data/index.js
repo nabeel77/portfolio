@@ -1,4 +1,10 @@
-import { userSkills, getUserSkills } from '../../query';
+import {
+  userSkills,
+  getUserSkills,
+  addProjects,
+  getProjects,
+} from '../../query';
+import { imagesUpload } from '../../helpers';
 
 export const addSkills = async (ctx) => {
   const result = await userSkills(ctx, ctx.request.body);
@@ -17,4 +23,24 @@ export const getSkills = async (ctx) => {
   } else {
     ctx.body = { status: 'success', result: null };
   }
+};
+
+export const addProjectsController = async (ctx) => {
+  const imagesArr = [];
+  let imagePathsArr;
+  if (!Array.isArray(ctx.request.files.image)) {
+    imagesArr.push(ctx.request.files.image);
+    imagePathsArr = await imagesUpload(imagesArr);
+  } else {
+    imagePathsArr = await imagesUpload(ctx.request.files.image);
+  }
+  const projectDetails = JSON.parse(ctx.request.body.projectDetails);
+  projectDetails.images = imagePathsArr;
+  const result = await addProjects(ctx, projectDetails);
+  ctx.body = result;
+};
+
+export const getProjectsController = async (ctx) => {
+  const result = await getProjects(ctx);
+  ctx.body = result;
 };
