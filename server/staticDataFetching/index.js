@@ -1,19 +1,52 @@
 import MongoClientConnection from '../db';
+import { logger } from '../logger';
 
 const getDb = async () => {
-  return await MongoClientConnection.Get();
+  try {
+    return await MongoClientConnection.Get();
+  } catch (err) {
+    logger.error(err);
+  }
 };
 export const getProjectNames = async () => {
-  const db = await getDb();
-  const result = await db.collection('projects').find().toArray();
-  return result.map((project) => project.projectDetails.projectId);
+  try {
+    const db = await getDb();
+    const result = await db.collection('projects').find().toArray();
+    return result.map((project) => project.projectDetails.projectId);
+  } catch (err) {
+    logger.error(err);
+  }
 };
 
 export const getProject = async (id) => {
-  const db = await getDb();
-  const result = await db
-    .collection('projects')
-    .find({ 'projectDetails.projectId': id })
-    .toArray();
-  return result;
+  try {
+    const db = await getDb();
+    const result = await db
+      .collection('projects')
+      .find({ 'projectDetails.projectId': id })
+      .toArray();
+    return result;
+  } catch (err) {
+    logger.error(err);
+  }
+};
+
+export const getProjects = async () => {
+  try {
+    const db = await getDb();
+    const result = await db.collection('projects').find().toArray();
+    return result;
+  } catch (err) {
+    logger.error(err);
+  }
+};
+
+export const getSkills = async () => {
+  try {
+    const db = await getDb();
+    const result = await db.collection('skills').find().toArray();
+    return result[0].skillSet;
+  } catch (err) {
+    logger.error(err);
+  }
 };

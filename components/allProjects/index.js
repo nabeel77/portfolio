@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import Link from 'next/link';
+import globalDesigns from '../../constants/globalDesigns';
 
 const AllProjects = ({ projectsArr }) => {
   const projects = projectsArr && projectsArr.length && (
@@ -8,17 +9,20 @@ const AllProjects = ({ projectsArr }) => {
       {projectsArr.map((project, index) => {
         return (
           <div
-            className="card card-compact w-96 bg-base-100 shadow-xl"
+            className="card card-compact w-80 h-72 lg:w-96 lg:h-80 bg-base-100 shadow-xl"
             key={index}
           >
-            <figure className="w-full">
+            <figure className="w-full h-[70%]">
               <img
+                className="w-full h-full object-cover"
                 src={`${project.projectDetails.images[0].Location}`}
                 loading="lazy"
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">
+              <h2
+                className={`${globalDesigns.responsiveFontStyles} card-title font-OrbitronBold`}
+              >
                 {project.projectDetails.projectName}
               </h2>
               <div className="card-actions cursor-pointer">
@@ -26,7 +30,7 @@ const AllProjects = ({ projectsArr }) => {
                   className="flex flex-row justify-between items-center"
                   href={`/projects/${project.projectDetails.projectId}`}
                 >
-                  <span>Show project</span>
+                  <span className="text-sm lg:text-md">Show project</span>
                   <span className="arrow-animation ml-2">
                     <HiArrowNarrowRight />
                   </span>

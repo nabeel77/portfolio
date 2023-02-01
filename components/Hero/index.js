@@ -26,7 +26,7 @@ const Hero = () => {
         >
           <a
             className="arrow cursor-pointer flex justify-center items-center w-10 h-16 lg:w-12 lg:h-24 rounded-full border border-solid border-primary"
-            href="#expertise"
+            href="#me"
           >
             <HiArrowNarrowDown className="arrow-down text-primary h-5 w-5 lg:h-12 lg:w-8 bg-transparent" />
           </a>

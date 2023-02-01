@@ -124,3 +124,9 @@
 {"level":"error","message":"_logger.default.error is not a function","service":"portfolio","timestamp":"2023-01-25T14:22:38.376Z"}
 {"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-30T11:13:01.202Z"}
 {"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-01-30T11:13:01.219Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-02-01T16:23:18.719Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-02-01T16:23:18.728Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-02-01T16:24:01.732Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-02-01T16:24:01.735Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-02-01T16:24:05.514Z"}
+{"level":"error","message":"jwt must be provided","service":"portfolio","timestamp":"2023-02-01T16:24:05.516Z"}

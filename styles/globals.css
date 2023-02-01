@@ -164,6 +164,13 @@ a {
   animation: rubberband 800ms alternate ease-out;
 }
 
+.tagcloud {
+  @apply text-sm md:text-lg m-auto w-6/12;
+}
+.tagcloud--item {
+  @apply hover:text-accent select-none;
+}
+
 @keyframes clippath {
   0%,
   100% {

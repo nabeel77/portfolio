@@ -24,6 +24,7 @@
     "@babel/register": "^7.18.9",
     "@koa/cors": "^4.0.0",
     "@next/font": "13.1.1",
+    "TagCloud": "^2.3.2",
     "autoprefixer": "^10.4.13",
     "aws-sdk": "^2.1300.0",
     "babel-polyfill": "^6.26.0",
