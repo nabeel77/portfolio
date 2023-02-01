@@ -1,9 +1,4 @@
 import globalDesigns from '../../constants/globalDesigns';
-import { devTechStack } from '../../constants/devSkills';
-import { DiJenkins } from 'react-icons/di';
-import { FaGitlab, FaShopify } from 'react-icons/fa';
-import { SiMaterialui } from 'react-icons/si';
-import { devIcons } from '../../constants/devIcons';
 
 const Me = () => {
   return (
@@ -71,27 +66,6 @@ const Me = () => {
             and gain hands-on experience in the application of Blockchain
             technology.
           </p>
-        </div>
-        <div className="flex flex-col gap-3">
-          <h3 className="text-lg md:text-xl font-[Orbitron-bold] text-primary">
-            Technologies I have worked with
-          </h3>
-          <div className="grid grid-cols-md lg:grid-cols-lg gap-16">
-            {devTechStack.map((item, index) => (
-              <div className="flex flex-col gap-2" key={index}>
-                <h3 className="text-accent font-OrbitronBold">
-                  {Object.keys(item)[0]}
-                </h3>
-                <ul className="flex flex-col gap-2">
-                  {item[Object.keys(item)[0]].map((tech, index) => (
-                    <li key={index} className="flex gap-2">
-                      {devIcons[tech]} {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

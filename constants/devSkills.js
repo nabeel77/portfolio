@@ -41,7 +41,7 @@ export const technologies = [
 
 export const devTechStack = [
   {
-    Languages: ['Javascript', 'Java', 'Python', 'Php'],
+    Languages: ['Javascript', 'Java', 'Php'],
   },
   {
     'Front-end': [
@@ -84,4 +84,13 @@ export const devTechStack = [
   {
     Other: ['Webpack', 'Websocket/Socket.io', 'Axios'],
   },
+];
+
+export const primaryTechnologies = [
+  'Javascript',
+  'React.js',
+  'Node.js',
+  'Next.js',
+  'Koa.js',
+  'Express.js',
 ];

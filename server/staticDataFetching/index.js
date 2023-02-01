@@ -31,6 +31,16 @@ export const getProject = async (id) => {
   }
 };
 
+export const getProjects = async () => {
+  try {
+    const db = await getDb();
+    const result = await db.collection('projects').find().toArray();
+    return result;
+  } catch (err) {
+    logger.error(err);
+  }
+};
+
 export const getSkills = async () => {
   try {
     const db = await getDb();

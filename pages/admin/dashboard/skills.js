@@ -5,7 +5,7 @@ import { BiPlus, BiMinus } from 'react-icons/bi';
 import makeAnimated from 'react-select/animated';
 import Select from 'react-select';
 import usePopup from '../../../components/hooks/usePopup';
-import Popup from '../../../components/popup';
+import Popup from '../../../components/Popup';
 import { devIcons } from '../../../constants/devIcons';
 import SkillSets from '../../../components/Skills';
 import { technologies } from '../../../constants/devSkills';

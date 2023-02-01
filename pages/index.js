@@ -5,17 +5,17 @@ import Work from '../components/Work';
 import Me from '../components/Me';
 import Divider from '../components/Divider';
 import { useRouter } from 'next/router';
-import { getSkills } from '../server/staticDataFetching';
+import { getSkills, getProjects } from '../server/staticDataFetching';
 
-export default function Home({ scrollRefs, skills }) {
+export default function Home({ scrollRefs, skills, projects }) {
   const [index, setIndex] = useState(null);
 
   const router = useRouter();
   const elements = [
-    <Hero />,
-    <Me />,
-    <Expertise skillSetsArr={skills} />,
-    <Work />,
+    <Hero key={0} />,
+    <Me key={1} />,
+    <Expertise key={2} skillSetsArr={skills} />,
+    <Work key={3} projectsArr={JSON.parse(projects)} />,
   ];
 
   useEffect(() => {
@@ -51,9 +51,11 @@ export default function Home({ scrollRefs, skills }) {
 
 export async function getServerSideProps(context) {
   const skills = await getSkills();
+  const projects = await getProjects();
   return {
     props: {
       skills: skills,
+      projects: JSON.stringify(projects),
     },
   };
 }
