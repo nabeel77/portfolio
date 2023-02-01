@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import Head from 'next/head';
 import ImageUpload from '../../../components/ImageUpload';
 import useImageUpload from '../../../components/hooks/useImageUpload';
-import Popup from '../../../components/popup';
+import Popup from '../../../components/Popup';
 import usePopup from '../../../components/hooks/usePopup';
 import globalDesigns from '../../../constants/globalDesigns';
 import Button from '../../../components/Button';
