@@ -1,7 +1,7 @@
 export const options = [
   '💎 Luxury',
   '🌳 Forest',
-  '🍋 Lemonade',
+  '🧁 Autumn',
   '🌞 Light',
   '🌚 Night',
 ];

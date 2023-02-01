@@ -24,8 +24,8 @@ module.exports = {
           ...require('daisyui/src/colors/themes')['[data-theme=forest]'],
           'primary-focus': 'mediumblue',
         },
-        lemonade: {
-          ...require('daisyui/src/colors/themes')['[data-theme=lemonade]'],
+        autumn: {
+          ...require('daisyui/src/colors/themes')['[data-theme=autumn]'],
           'primary-focus': 'mediumblue',
         },
         halloween: {
@@ -122,6 +122,13 @@ module.exports = {
       },
       gridColumn: {
         'span-5': '2 / span 5',
+      },
+      fontFamily: {
+        OrbitronBold: ['Orbitron-bold', 'Arial', 'sans-serif'],
+      },
+      gridTemplateColumns: {
+        lg: 'repeat(auto-fill, minmax(200px, 1fr))',
+        md: 'repeat(auto-fill, minmax(100px, 1fr))',
       },
     },
   },

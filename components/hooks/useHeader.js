@@ -5,7 +5,7 @@ import globalDesigns from '../../constants/globalDesigns';
 const useHeader = () => {
   const router = useRouter();
   const scrollRefs = useRef([]);
-  const linkPlaceHoldersArr = ['Home', 'Expertise', 'Work'];
+  const linkPlaceHoldersArr = ['Home', 'Me', 'Expertise', 'Work'];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   scrollRefs.current = [...Array(linkPlaceHoldersArr.length).keys()].map(
     (_, i) => scrollRefs.current[i] ?? React.createRef()

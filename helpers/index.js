@@ -5,7 +5,6 @@ export const fetchRequest = async (url, headers) => {
   return result;
 };
 export const capitalizeFirstLetter = (string) => {
-  console.log(string);
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 export const changeItemPosition = (arr, old_index, new_index) => {
