@@ -30,7 +30,7 @@ const AllProjects = ({ projectsArr }) => {
                   className="flex flex-row justify-between items-center"
                   href={`/projects/${project.projectDetails.projectId}`}
                 >
-                  <span className="text-sm lg:text-md">Show project</span>
+                  <span className="text-sm lg:text-md">Show projectsss</span>
                   <span className="arrow-animation ml-2">
                     <HiArrowNarrowRight />
                   </span>
