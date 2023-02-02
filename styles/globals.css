@@ -170,6 +170,9 @@ a {
 .tagcloud--item {
   @apply hover:text-accent select-none;
 }
+.libautech {
+  @apply w-[200px] h-[60px] lg:w-[300px] lg:h-[160px];
+}
 
 @keyframes clippath {
   0%,

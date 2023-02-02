@@ -22,7 +22,7 @@ const SkillSets = ({ skillSetsArr, skillSetsObj, showIcons }) => {
         <div className="grid grid-cols-md lg:grid-cols-lg gap-16">
           {devTechStack.map((item, index) => (
             <div className="flex flex-col gap-2" key={index}>
-              <h3 className="text-accent font-OrbitronBold">
+              <h3 className="text-primary font-OrbitronBold">
                 {Object.keys(item)[0]}
               </h3>
               <ul className="flex flex-col gap-2">
@@ -34,7 +34,7 @@ const SkillSets = ({ skillSetsArr, skillSetsObj, showIcons }) => {
                     {devIcons[tech]} {tech}{' '}
                     {primaryTechnologies.includes(tech) && (
                       <h3
-                        className={`${globalDesigns.responsiveFontStyles} font-OrbitronBold text-primary`}
+                        className={`${globalDesigns.responsiveFontStyles} font-OrbitronBold text-accent`}
                       >
                         (Primary)
                       </h3>

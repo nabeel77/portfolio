@@ -22,6 +22,7 @@ module.exports = {
         },
         forest: {
           ...require('daisyui/src/colors/themes')['[data-theme=forest]'],
+          accent: '#d6cbcb',
           'primary-focus': 'mediumblue',
         },
         autumn: {
@@ -129,6 +130,20 @@ module.exports = {
       gridTemplateColumns: {
         lg: 'repeat(auto-fill, minmax(200px, 1fr))',
         md: 'repeat(auto-fill, minmax(100px, 1fr))',
+        accordionLg: '50% 45% auto',
+        accordionMd: '35% 60% auto',
+        accordionSm: '90% auto',
+        accordionPop: '85% auto',
+      },
+      gridTemplateRows: {
+        lg: 'repeat(auto-fill, minmax(200px, 1fr))',
+        md: 'repeat(auto-fill, minmax(100px, 1fr))',
+        accordionLg: '90% auto',
+        accordionMd: '35% 60% auto',
+        accordionSm: 'auto auto',
+      },
+      flex: {
+        0.5: '0.5',
       },
     },
   },
