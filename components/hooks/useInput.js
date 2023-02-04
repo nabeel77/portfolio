@@ -26,7 +26,6 @@ const useInput = (id, onInput) => {
   return {
     inputState,
     changeHandler,
-    emptyValue,
   };
 };
 
