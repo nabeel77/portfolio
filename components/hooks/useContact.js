@@ -75,7 +75,7 @@ function useContact() {
         showPopup();
       }
     } catch (error) {
-      setError(result.message);
+      setError(error.message);
       showPopup();
     }
   };
