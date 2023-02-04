@@ -6,7 +6,7 @@ const MongoClientConnection = (() => {
 
   const DbConnect = async () => {
     try {
-      let uri = process.env.DB_URL;
+      let uri = process.env.DB_URI;
       let mongoClient = await MongoClient.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,

@@ -5,10 +5,10 @@ import { logger } from './logger';
 
 dotenv.config();
 
-const bucketName = process.env.AWS_BUCKET_NAME;
-const region = process.env.AWS_BUCKET_REGION;
-const accessKeyId = process.env.AWS_ACCESS_KEY;
-const secretKey = process.env.AWS_ACCESS_KEY_SECRET;
+const bucketName = process.env.AMAZON_BUCKET_NAME;
+const region = process.env.AMAZON_BUCKET_REGION;
+const accessKeyId = process.env.AMAZON_ACCESS_KEY;
+const secretKey = process.env.AMAZON_ACCESS_KEY_SECRET;
 
 const s3 = new S3({
   region: region,
