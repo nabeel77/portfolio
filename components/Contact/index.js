@@ -3,6 +3,7 @@ import useContact from '../hooks/useContact';
 import Input from '../input';
 import Popup from '../Popup';
 import popupIcons from '../../staticData/popupIcons';
+import useDebounce from '../hooks/useDebounce';
 
 const Contact = () => {
   const {
@@ -11,7 +12,7 @@ const Contact = () => {
     isShowing,
     popupState,
     hidePopup,
-    emailSent,
+    submitDisabled,
     handleSendMessage,
   } = useContact();
 
@@ -39,7 +40,6 @@ const Contact = () => {
             type="text"
             placeholder="Your name"
             onInput={inputHandler}
-            sent={emailSent}
             value={formState.inputs.name.value}
             classNames="input input-bordered w-full lg:w-60 "
           />
@@ -50,7 +50,6 @@ const Contact = () => {
             type="email"
             placeholder="Your email address"
             onInput={inputHandler}
-            sent={emailSent}
             value={formState.inputs.email.value}
             classNames="input input-bordered w-full lg:w-60"
           />
@@ -61,13 +60,13 @@ const Contact = () => {
             type="text"
             onInput={inputHandler}
             placeholder="Your message"
-            sent={emailSent}
             value={formState.inputs.message.value}
-            classNames="input input-bordered w-full lg:w-60 py-3"
+            classNames="input input-bordered h-1/3 w-full lg:w-60 py-3"
           />
           <button
-            className="btn bg-primary"
-            onClick={(e) => handleSendMessage(e, formState)}
+            disabled={submitDisabled}
+            className="btn bg-accent text-primary"
+            onClick={useDebounce(handleSendMessage, 500)}
           >
             Submit
           </button>

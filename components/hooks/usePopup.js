@@ -50,7 +50,7 @@ const usePopup = (initialState) => {
     if (isShowing) {
       setIsShowing(false);
     }
-  }, 3000);
+  }, 5000);
 
   return [
     isShowing,

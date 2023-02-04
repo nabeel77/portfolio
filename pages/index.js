@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Hero from '../components/Hero';
-import Expertise from '../components/Expertise';
-import Work from '../components/Work';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
 import Me from '../components/Me';
 import Experience from '../components/Experience';
 import Contact from '../components/Contact';
 import Divider from '../components/Divider';
+import ScrollToTop from '../components/ScrollToTop';
 import { useRouter } from 'next/router';
 import { getSkills, getProjects } from '../server/staticDataFetching';
 
@@ -16,8 +17,8 @@ export default function Home({ scrollRefs, skills, projects }) {
   const elements = [
     <Hero key={0} />,
     <Me key={1} />,
-    <Expertise key={2} skillSetsArr={skills} />,
-    <Work key={3} projectsArr={JSON.parse(projects)} />,
+    <Skills key={2} skillSetsArr={skills} />,
+    <Projects key={3} projectsArr={JSON.parse(projects)} />,
     <Experience key={4} />,
     <Contact key={5} />,
   ];
@@ -48,6 +49,7 @@ export default function Home({ scrollRefs, skills, projects }) {
             {index < elements.length - 1 && <Divider />}
           </div>
         ))}
+        <ScrollToTop />
       </div>
     </div>
   );

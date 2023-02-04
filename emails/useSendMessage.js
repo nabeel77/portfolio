@@ -18,7 +18,7 @@ export default function useSendMessage() {
         await sendgrid.send(emailOptionsForSender);
         return {
           status: 200,
-          message: 'Email to receiver and sender sent successfully!',
+          message: 'Thank you for your message 😊. Message sent successfully!',
         };
       } catch (error) {
         return {

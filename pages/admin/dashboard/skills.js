@@ -7,7 +7,7 @@ import Select from 'react-select';
 import usePopup from '../../../components/hooks/usePopup';
 import Popup from '../../../components/Popup';
 import { devIcons } from '../../../staticData/devIcons';
-import SkillSets from '../../../components/Skills';
+import Technologies from '../../../components/Technologies';
 import { technologies } from '../../../staticData/devSkills';
 
 const Skills = () => {
@@ -112,7 +112,7 @@ const Skills = () => {
             </Button>
           </div>
         )}
-        <SkillSets
+        <Technologies
           skillSetsArr={skillSet}
           skillSetsObj={devIcons}
           showIcons={true}
