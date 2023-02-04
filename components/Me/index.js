@@ -1,12 +1,13 @@
-import globalDesigns from '../../constants/globalDesigns';
-
+import globalDesigns from '../../staticData/globalDesigns';
+import Image from 'next/image';
+import Nabeel from '../../public/images/Nabeel.jpg';
 const Me = () => {
   return (
     <section id="me" className="w-full h-full">
       <div className="lg:px-60 flex flex-col gap-10">
         <div className="avatar my-0 mx-auto">
           <div className="w-40 lg:w-56 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src="https://www.w3schools.com/images/w3schools_green.jpg" />
+            <Image alt="Nabeel" src={Nabeel} />
           </div>
         </div>
         <div className="flex flex-col gap-3">

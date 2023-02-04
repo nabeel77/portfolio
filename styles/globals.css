@@ -134,7 +134,7 @@ a {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-.arrow-container {
+#arrow-container {
   clip-path: polygon(
     0% -9%,
     96% -3%,
@@ -169,6 +169,20 @@ a {
 }
 .tagcloud--item {
   @apply hover:text-accent select-none;
+}
+.libautech {
+  @apply w-[200px] h-[60px] lg:w-[300px] lg:h-[160px];
+}
+
+.avatar img {
+  @apply h-auto;
+}
+
+canvas {
+  position: absolute !important;
+  top: 100px;
+  bottom: 0px;
+  width: 100%;
 }
 
 @keyframes clippath {

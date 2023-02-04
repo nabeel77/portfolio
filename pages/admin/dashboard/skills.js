@@ -1,14 +1,14 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Button from '../../../components/Button';
-import globalDesigns from '../../../constants/globalDesigns';
+import globalDesigns from '../../../staticData/globalDesigns';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import makeAnimated from 'react-select/animated';
 import Select from 'react-select';
 import usePopup from '../../../components/hooks/usePopup';
 import Popup from '../../../components/Popup';
-import { devIcons } from '../../../constants/devIcons';
+import { devIcons } from '../../../staticData/devIcons';
 import SkillSets from '../../../components/Skills';
-import { technologies } from '../../../constants/devSkills';
+import { technologies } from '../../../staticData/devSkills';
 
 const Skills = () => {
   const animatedComponents = makeAnimated();
@@ -112,7 +112,11 @@ const Skills = () => {
             </Button>
           </div>
         )}
-        <SkillSets skillSetsArr={skillSet} skillSetsObj={devIcons} />
+        <SkillSets
+          skillSetsArr={skillSet}
+          skillSetsObj={devIcons}
+          showIcons={true}
+        />
       </div>
     </>
   );

@@ -10,6 +10,10 @@ const formReducer = (state, action) => {
           [action.inputId]: { value: action.value },
         },
       };
+    case 'EMPTY':
+      return {
+        inputs: action.inputs,
+      };
     default:
       return state;
   }
@@ -28,7 +32,11 @@ const useForm = (initialInput) => {
     dispatch({ type: 'SET_DATA', inputs: inputData });
   }, []);
 
-  return [formState, inputHandler, setFormData];
+  const setFormEmpty = useCallback(() => {
+    dispatch({ type: 'EMPTY', inputs: initialInput });
+  }, []);
+
+  return [formState, inputHandler, setFormEmpty, setFormData];
 };
 
 export default useForm;

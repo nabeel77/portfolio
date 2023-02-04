@@ -8,7 +8,7 @@ const MovingParticles = () => {
 
   return (
     <Particles
-      className="w-full h-full absolute left-0 z-[-100]"
+      className="w-full h-full absolute top-0 left-0 z-[-100]"
       id="tsparticles"
       init={particlesInit}
       options={{

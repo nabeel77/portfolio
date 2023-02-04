@@ -1,7 +1,7 @@
 import React from 'react';
-import { devTechStack, primaryTechnologies } from '../../constants/devSkills';
-import { devIcons } from '../../constants/devIcons';
-import globalDesigns from '../../constants/globalDesigns';
+import { devTechStack, primaryTechnologies } from '../../staticData/devSkills';
+import { devIcons } from '../../staticData/devIcons';
+import globalDesigns from '../../staticData/globalDesigns';
 
 const SkillSets = ({ skillSetsArr, skillSetsObj, showIcons }) => {
   const skills = skillSetsArr && showIcons && (
@@ -19,32 +19,34 @@ const SkillSets = ({ skillSetsArr, skillSetsObj, showIcons }) => {
     <div>
       <div className="flex flex-col gap-3">
         {skills}
-        <div className="grid grid-cols-md lg:grid-cols-lg gap-16">
-          {devTechStack.map((item, index) => (
-            <div className="flex flex-col gap-2" key={index}>
-              <h3 className="text-accent font-OrbitronBold">
-                {Object.keys(item)[0]}
-              </h3>
-              <ul className="flex flex-col gap-2">
-                {item[Object.keys(item)[0]].map((tech, index) => (
-                  <li
-                    key={index}
-                    className={`${globalDesigns.responsiveFontStyles} flex gap-2`}
-                  >
-                    {devIcons[tech]} {tech}{' '}
-                    {primaryTechnologies.includes(tech) && (
-                      <h3
-                        className={`${globalDesigns.responsiveFontStyles} font-OrbitronBold text-primary`}
-                      >
-                        (Primary)
-                      </h3>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        {!showIcons && (
+          <div className="grid grid-cols-md lg:grid-cols-lg gap-16">
+            {devTechStack.map((item, index) => (
+              <div className="flex flex-col gap-2" key={index}>
+                <h3 className="text-primary font-OrbitronBold">
+                  {Object.keys(item)[0]}
+                </h3>
+                <ul className="flex flex-col gap-2">
+                  {item[Object.keys(item)[0]].map((tech, index) => (
+                    <li
+                      key={index}
+                      className={`${globalDesigns.responsiveFontStyles} flex gap-2`}
+                    >
+                      {devIcons[tech]} {tech}{' '}
+                      {primaryTechnologies.includes(tech) && (
+                        <h3
+                          className={`${globalDesigns.responsiveFontStyles} font-OrbitronBold text-accent`}
+                        >
+                          (Primary)
+                        </h3>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

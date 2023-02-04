@@ -1,5 +1,5 @@
 import React from 'react';
-import globalDesigns from '../../constants/globalDesigns';
+import globalDesigns from '../../staticData/globalDesigns';
 
 const Loader = () => {
   const textClasses = `${globalDesigns.responsiveFontStyles} absolute top-9`;

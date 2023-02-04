@@ -1,6 +1,6 @@
 import Skills from '../Skills';
 import TextSphere from '../TextSphere';
-import { devIcons } from '../../constants/devIcons';
+import { devIcons } from '../../staticData/devIcons';
 
 const Expertise = ({ skillSetsArr }) => {
   return (
@@ -18,11 +18,6 @@ const Expertise = ({ skillSetsArr }) => {
           />
         </div>
       </div>
-      {/* <TextSphere
-        skillSetsArr={skillSetsArr}
-        skillSetsObj={devIcons}
-        showIcons={false}
-      /> */}
     </section>
   );
 };

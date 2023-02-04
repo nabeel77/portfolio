@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from '../components/Hero';
 import Expertise from '../components/Expertise';
 import Work from '../components/Work';
 import Me from '../components/Me';
+import Experience from '../components/Experience';
+import Contact from '../components/Contact';
 import Divider from '../components/Divider';
 import { useRouter } from 'next/router';
 import { getSkills, getProjects } from '../server/staticDataFetching';
@@ -16,6 +18,8 @@ export default function Home({ scrollRefs, skills, projects }) {
     <Me key={1} />,
     <Expertise key={2} skillSetsArr={skills} />,
     <Work key={3} projectsArr={JSON.parse(projects)} />,
+    <Experience key={4} />,
+    <Contact key={5} />,
   ];
 
   useEffect(() => {
@@ -41,7 +45,7 @@ export default function Home({ scrollRefs, skills, projects }) {
             >
               {item}
             </div>
-            <Divider />
+            {index < elements.length - 1 && <Divider />}
           </div>
         ))}
       </div>
@@ -54,8 +58,8 @@ export async function getServerSideProps(context) {
   const projects = await getProjects();
   return {
     props: {
-      skills: skills,
-      projects: JSON.stringify(projects),
+      skills: skills !== undefined ? skills : null,
+      projects: projects && JSON.stringify(projects),
     },
   };
 }

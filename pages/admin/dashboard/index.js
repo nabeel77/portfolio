@@ -1,8 +1,14 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import Projects from './projects';
+import Skills from './skills';
 
 const Dashboard = () => {
-  return <></>;
+  return (
+    <div className="py-10 px-5">
+      <Projects />
+      <Skills />
+    </div>
+  );
 };
 
 export default Dashboard;

@@ -1,26 +1,7 @@
-import { useReducer, useEffect } from 'react';
-
-const inputReducer = (state, action) => {
-  switch (action.type) {
-    case 'CHANGE':
-      return { ...state, value: action.val };
-    default:
-      return state;
-  }
-};
+import useInput from '../hooks/useInput';
 
 const Input = (props) => {
-  const [inputState, dispatch] = useReducer(inputReducer, { value: '' });
-  const { id, onInput } = props;
-  const { value } = inputState;
-
-  useEffect(() => {
-    onInput(id, value);
-  }, [id, onInput, value]);
-
-  const changeHandler = (event) => {
-    dispatch({ type: 'CHANGE', val: event.target.value });
-  };
+  const { changeHandler } = useInput(props.id, props.onInput);
   const element =
     props.element === 'input' ? (
       <input
@@ -28,7 +9,7 @@ const Input = (props) => {
         type={props.type}
         placeholder={props.placeholder}
         onChange={changeHandler}
-        value={inputState.value}
+        value={props.value}
         className={props.classNames}
       />
     ) : (
@@ -36,7 +17,7 @@ const Input = (props) => {
         id={props.id}
         rows={props.rows || 3}
         onChange={changeHandler}
-        value={inputState.value}
+        value={props.value}
         className={props.classNames}
         placeholder={props.placeholder}
       />

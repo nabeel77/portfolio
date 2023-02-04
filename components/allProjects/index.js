@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import Link from 'next/link';
-import globalDesigns from '../../constants/globalDesigns';
+import globalDesigns from '../../staticData/globalDesigns';
 
 const AllProjects = ({ projectsArr }) => {
   const projects = projectsArr && projectsArr.length && (

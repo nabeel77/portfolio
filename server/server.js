@@ -4,9 +4,9 @@ import 'isomorphic-fetch';
 import next from 'next';
 import Koa from 'koa';
 import Router from 'koa-router';
-import koaBody from 'koa-body';
 import UserRouter from './routes/user';
 import DataRouter from './routes/data';
+import EmailRouter from './routes/emails';
 import MongoClientConnection from './db';
 import cookie from 'koa-cookie';
 
@@ -44,6 +44,7 @@ const handler = app.getRequestHandler();
     server.use(cookie());
     server.use(UserRouter.routes()).use(UserRouter.allowedMethods());
     server.use(DataRouter.routes()).use(DataRouter.allowedMethods());
+    server.use(EmailRouter.routes()).use(EmailRouter.allowedMethods());
     server.use(router.routes());
     server.listen(port, (_) => console.log(`App running on port ${port}`));
   } catch (e) {
