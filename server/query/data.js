@@ -1,7 +1,8 @@
 import dotenv from 'dotenv';
-import { logger } from '../logger';
+import createLoggerInstance from '../logger';
 
 dotenv.config();
+const logger = createLoggerInstance();
 
 export const getUserSkills = async (ctx, username) => {
   try {

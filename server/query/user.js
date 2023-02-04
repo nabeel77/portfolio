@@ -1,9 +1,10 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import { logger } from '../logger';
+import createLoggerInstance from '../logger';
 
 dotenv.config();
+const logger = createLoggerInstance();
 
 export const getUser = async (ctx, username) => {
   const user = await ctx.db.collection('adminUser').findOne({ username });

@@ -1,6 +1,7 @@
 import MongoClientConnection from '../db';
-import { logger } from '../logger';
+import createLoggerInstance from '../logger';
 
+const logger = createLoggerInstance();
 const getDb = async () => {
   try {
     return await MongoClientConnection.Get();
