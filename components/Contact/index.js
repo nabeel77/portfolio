@@ -1,6 +1,6 @@
 import globalDesigns from '../../staticData/globalDesigns';
 import useContact from '../hooks/useContact';
-import Input from '../input';
+import Input from '../Input';
 import Popup from '../Popup';
 import popupIcons from '../../staticData/popupIcons';
 import useDebounce from '../hooks/useDebounce';

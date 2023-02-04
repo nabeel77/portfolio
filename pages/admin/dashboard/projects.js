@@ -8,7 +8,7 @@ import globalDesigns from '../../../staticData/globalDesigns';
 import popupIcons from '../../../staticData/popupIcons';
 import Button from '../../../components/Button';
 import { BiPlus, BiMinus } from 'react-icons/bi';
-import Input from '../../../components/input';
+import Input from '../../../components/Input';
 import useForm from '../../../components/hooks/useForm';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
