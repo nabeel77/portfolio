@@ -1,10 +1,10 @@
 import S3 from 'aws-sdk/clients/s3';
 import dotenv from 'dotenv';
 import fs from 'fs';
-import { logger } from './logger';
+import createLoggerInstance from './logger';
 
 dotenv.config();
-
+const logger = createLoggerInstance();
 const bucketName = process.env.AMAZON_BUCKET_NAME;
 const region = process.env.AMAZON_BUCKET_REGION;
 const accessKeyId = process.env.AMAZON_ACCESS_KEY;

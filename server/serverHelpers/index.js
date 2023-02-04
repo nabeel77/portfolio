@@ -1,5 +1,7 @@
 import { upload, getFileStream } from '../s3';
-import logger from '../logger';
+import createLoggerInstance from '../logger';
+
+const logger = createLoggerInstance();
 
 export const imagesUpload = async (array) => {
   try {
