@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import { useRouter } from 'next/router';
 import Menu from '../components/menu';
-import AuthCheck from '../components/authCheck';
+import AuthCheck from '../components/AuthCheck';
 import useHeader from '../components/hooks/useHeader';
 import Header from '../components/Header';
 
