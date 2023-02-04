@@ -1,7 +1,7 @@
 import Technologies from '../Technologies';
 import { devIcons } from '../../staticData/devIcons';
 
-const Expertise = ({ skillSetsArr }) => {
+const Skills = ({ skillSetsArr }) => {
   return (
     <section id="skills" className="w-full h-full">
       <div className="lg:px-60 flex flex-col gap-10">
@@ -21,4 +21,4 @@ const Expertise = ({ skillSetsArr }) => {
   );
 };
 
-export default Expertise;
+export default Skills;
