@@ -72,11 +72,13 @@ export const getStaticProps = async (context) => {
 
 export async function getStaticPaths() {
   const projects = await getProjectNames();
-  const pathParams = projects.map((id) => {
-    return {
-      params: { pid: id },
-    };
-  });
+  const pathParams =
+    projects &&
+    projects.map((id) => {
+      return {
+        params: { pid: id },
+      };
+    });
   return {
     paths: pathParams,
     fallback: true,
