@@ -14,7 +14,6 @@ const BREAKPOINTS_INT = {
 
 const customViewports = Object.fromEntries(
   Object.entries(BREAKPOINTS_INT).map(([key, val], idx) => {
-    console.log(val);
     return [
       key,
       {

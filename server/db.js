@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 
 const MongoClientConnection = (() => {
   let db = null;
@@ -6,11 +6,13 @@ const MongoClientConnection = (() => {
 
   const DbConnect = async () => {
     try {
-      let url = process.env.DB_URL;
-      let mongoClient = await MongoClient.connect(url, {
+      let uri = process.env.DB_URI;
+      let mongoClient = await MongoClient.connect(uri, {
+        useNewUrlParser: true,
         useUnifiedTopology: true,
+        serverApi: ServerApiVersion.v1,
       });
-      const mongoDbInstance = mongoClient.db(process.env.DB);
+      const mongoDbInstance = await mongoClient.db(process.env.DB);
       return mongoDbInstance;
     } catch (e) {
       return e;
@@ -20,13 +22,9 @@ const MongoClientConnection = (() => {
   const Get = async () => {
     try {
       instance++; // this is just to count how many times our singleton is called.
-      console.log(`DbConnection called ${instance} times`);
-
       if (db != null) {
-        console.log(`db connection is already alive`);
         return db;
       } else {
-        console.log(`getting new db connection`);
         db = await DbConnect();
         return db;
       }
