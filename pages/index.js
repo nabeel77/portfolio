@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from '../components/Hero';
 import Expertise from '../components/Expertise';
 import Work from '../components/Work';
@@ -45,7 +45,7 @@ export default function Home({ scrollRefs, skills, projects }) {
             >
               {item}
             </div>
-            <Divider />
+            {index < elements.length - 1 && <Divider />}
           </div>
         ))}
       </div>
@@ -58,8 +58,8 @@ export async function getServerSideProps(context) {
   const projects = await getProjects();
   return {
     props: {
-      skills: skills,
-      projects: JSON.stringify(projects),
+      skills: skills !== undefined ? skills : null,
+      projects: projects && JSON.stringify(projects),
     },
   };
 }

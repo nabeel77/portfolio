@@ -2,6 +2,7 @@ export const technologies = [
   { value: 'HTML5', label: 'HTML5' },
   { value: 'CSS3', label: 'CSS3' },
   { value: 'SASS', label: 'SASS' },
+  { value: 'LESS', label: 'LESS' },
   { value: 'Bootstrap', label: 'Bootstrap' },
   { value: 'Tailwind Css', label: 'Tailwind Css' },
   { value: 'Javascript', label: 'Javascript' },
@@ -30,6 +31,7 @@ export const technologies = [
   { value: 'Vercel', label: 'Vercel' },
   { value: 'Heroku', label: 'Heroku' },
   { value: 'Docker', label: 'Docker' },
+  { value: 'Jenkins', label: 'Jenkins' },
   { value: 'Git', label: 'Git' },
   { value: 'Github', label: 'Github' },
   { value: 'GitLab', label: 'GitLab' },
@@ -37,6 +39,8 @@ export const technologies = [
   { value: 'GoogleAnalytics', label: 'GoogleAnalytics' },
   { value: 'Auth0', label: 'Auth0' },
   { value: 'PWA Studio', label: 'PWA Studio' },
+  { value: 'Magento 2', label: 'Magento 2' },
+  { value: 'Shopify', label: 'Shopify' },
 ];
 
 export const devTechStack = [

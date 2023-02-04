@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BiPlus, BiMinus } from 'react-icons/bi';
-import globalDesigns from '../../constants/globalDesigns';
+import globalDesigns from '../../staticData/globalDesigns';
 import { ImLocation2 } from 'react-icons/im';
+import { motion } from 'framer-motion';
 
 const Accordion = ({ content }) => {
   const [isActive, setIsActive] = useState(false);
@@ -29,33 +30,42 @@ const Accordion = ({ content }) => {
         </div>
       </div>
 
-      <div
-        className={`${
-          isActive ? 'block' : 'hidden'
-        } accordion-content grid grid-rows-accordionSm lg:grid-cols-accordionPop gap-2 items-center px-4 py-5 -mt-5 w-full md:w-[60%] bg-primary rounded -mt-2`}
-      >
-        <div className="flex flex-col gap-5 row-span-2">
-          <h3
-            className={`${globalDesigns.responsiveFontStyles} text-accent flex gap-2`}
-          >
-            <ImLocation2 className="w-5 h-5" /> {content.location}
-          </h3>
-          <p className={`${globalDesigns.responsiveFontStyles} text-accent`}>
-            {content.responsibilities}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {content.technologies.map((item, index) => (
-              <p
-                className={`${globalDesigns.responsiveFontStyles} text-primary px-5 py-2 rounded-full bg-accent`}
-                key={index}
-              >
-                {item}
-              </p>
-            ))}
+      {
+        <motion.div
+          initial="hidden"
+          animate={{
+            y: isActive ? 0 : -50,
+            opacity: 1,
+          }}
+          className={`${
+            isActive ? 'block' : 'hidden'
+          } accordion-content grid grid-rows-accordionSm lg:grid-cols-accordionPop gap-2 items-center px-4 py-5 -mt-5 w-full md:w-[60%] bg-primary rounded -mt-2`}
+        >
+          <div className="flex flex-col gap-5 row-span-2">
+            <h3
+              className={`${globalDesigns.responsiveFontStyles} text-accent flex gap-2`}
+            >
+              <ImLocation2 className="w-5 h-5" /> {content.location}
+            </h3>
+            <p className={`${globalDesigns.responsiveFontStyles} text-accent`}>
+              {content.responsibilities}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {content.technologies.map((item, index) => (
+                <p
+                  className={`${globalDesigns.responsiveFontStyles} text-primary px-5 py-2 rounded-full bg-accent`}
+                  key={index}
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="row-start-1 lg:col-start-2">{content.companyLogo}</div>
-      </div>
+          <div className="row-start-1 lg:col-start-2">
+            {content.companyLogo}
+          </div>
+        </motion.div>
+      }
     </React.Fragment>
   );
 };

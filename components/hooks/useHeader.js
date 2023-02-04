@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import globalDesigns from '../../constants/globalDesigns';
+import globalDesigns from '../../staticData/globalDesigns';
 
 const useHeader = () => {
   const router = useRouter();

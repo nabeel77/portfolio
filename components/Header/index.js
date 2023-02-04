@@ -2,7 +2,7 @@ import React from 'react';
 import { BiMenu } from 'react-icons/bi';
 import { BiX } from 'react-icons/bi';
 import useSelect from '../hooks/useSelect';
-import { options } from '../../constants/options';
+import { options } from '../../staticData/options';
 import Select from '../Select';
 
 const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
@@ -29,7 +29,11 @@ const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
           </div>
         </div>
       </header>
-      <div className={`${!isMobileMenuOpen && 'hidden'} fixed w-full h-full`}>
+      <div
+        className={`${
+          !isMobileMenuOpen && 'hidden'
+        } z-99999999 fixed w-full h-full`}
+      >
         <div className="h-full w-11/12 bg-base-100 py-10 px-5 flex flex-col items-center">
           <div className="w-full h-auto flex justify-start">
             <button

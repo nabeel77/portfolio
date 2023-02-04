@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import Link from 'next/link';
-import globalDesigns from '../../constants/globalDesigns';
+import globalDesigns from '../../staticData/globalDesigns';
 
 const AllProjects = ({ projectsArr }) => {
   const projects = projectsArr && projectsArr.length && (
@@ -30,7 +30,7 @@ const AllProjects = ({ projectsArr }) => {
                   className="flex flex-row justify-between items-center"
                   href={`/projects/${project.projectDetails.projectId}`}
                 >
-                  <span className="text-sm lg:text-md">Show projectsss</span>
+                  <span className="text-sm lg:text-md">Show project</span>
                   <span className="arrow-animation ml-2">
                     <HiArrowNarrowRight />
                   </span>

@@ -63,6 +63,7 @@ module.exports = {
       },
       width: {
         30: '30%',
+        60: '60%',
       },
       maxWidth: {
         '1/2': '50%',

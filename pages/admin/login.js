@@ -2,7 +2,7 @@ import React from 'react';
 import Input from '../../components/input';
 import { useRouter } from 'next/router';
 import useForm from '../../components/hooks/useForm';
-import globalDesigns from '../../constants/globalDesigns';
+import globalDesigns from '../../staticData/globalDesigns';
 
 const AdminLogin = () => {
   const router = useRouter();

@@ -1,6 +1,6 @@
 import React from 'react';
 import { getProjectNames, getProject } from '../../server/staticDataFetching';
-import { devIcons } from '../../constants/devIcons';
+import { devIcons } from '../../staticData/devIcons';
 import { useRouter } from 'next/router';
 import Loader from '../../components/Loader';
 

@@ -4,21 +4,22 @@ import ImageUpload from '../../../components/ImageUpload';
 import useImageUpload from '../../../components/hooks/useImageUpload';
 import Popup from '../../../components/Popup';
 import usePopup from '../../../components/hooks/usePopup';
-import globalDesigns from '../../../constants/globalDesigns';
+import globalDesigns from '../../../staticData/globalDesigns';
+import popupIcons from '../../../staticData/popupIcons';
 import Button from '../../../components/Button';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import Input from '../../../components/input';
 import useForm from '../../../components/hooks/useForm';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { technologies } from '../../../constants/devSkills';
+import { technologies } from '../../../staticData/devSkills';
 import AllProjects from '../../../components/AllProjects';
 import Loader from '../../../components/Loader';
 import { fetchRequest } from '../../../helpers';
 
 const Projects = () => {
   const animatedComponents = makeAnimated();
-  const [imageUrl, onImageChange, error, changeErrorState, imageUrlsState] =
+  const [onImageChange, error, changeErrorState, imageUrlsState] =
     useImageUpload([]);
   const [isShowing, showPopup, hidePopup, popupState, setError, setSuccess] =
     usePopup({
@@ -27,6 +28,7 @@ const Projects = () => {
   const [formState, inputHandler] = useForm({
     name: { value: '' },
     description: { value: '' },
+    responsibilities: { value: '' },
     url: { value: '' },
   });
   const [formShow, setFormShow] = useState(false);
@@ -52,6 +54,7 @@ const Projects = () => {
       projectName: formState.inputs.name.value,
       projectId: formState.inputs.name.value.toLowerCase().split(' ').join('-'),
       projectDescription: formState.inputs.description.value,
+      responsibilities: formState.inputs.responsibilities.value,
       projectUrl: formState.inputs.url.value,
       technologies: cleanedTechnologyOptions,
     };
@@ -122,7 +125,7 @@ const Projects = () => {
       </Head>
       <Popup
         isShowing={isShowing}
-        state={globalDesigns[popupState.state]}
+        state={popupIcons[popupState.state]}
         message={popupState.message}
         hide={hidePopup}
       />
@@ -168,6 +171,14 @@ const Projects = () => {
                 onInput={inputHandler}
                 classNames="textarea input-bordered w-full max-w-xs"
                 placeholder="Project description"
+              />
+              <Input
+                id="responsibilities"
+                element="text-area"
+                type="text"
+                onInput={inputHandler}
+                classNames="textarea input-bordered w-full max-w-xs"
+                placeholder="My responsibilities"
               />
               <label htmlFor="technologies">Select technologies</label>
               <Select
