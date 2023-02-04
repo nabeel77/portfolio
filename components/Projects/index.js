@@ -1,8 +1,8 @@
 import AllProjects from '../AllProjects';
 
-const Work = ({ projectsArr }) => {
+const Projects = ({ projectsArr }) => {
   return (
-    <section id="work">
+    <section id="projects">
       <div className="lg:px-10 flex flex-col gap-10">
         <h1 className="my-0 mx-auto text-accent text-xl md:text-3xl lg:text-4xl font-OrbitronBold">
           <strong>Projects I have Built</strong>{' '}
@@ -14,4 +14,4 @@ const Work = ({ projectsArr }) => {
   );
 };
 
-export default Work;
+export default Projects;

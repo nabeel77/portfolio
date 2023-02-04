@@ -11,7 +11,7 @@ const Project = (props) => {
   }
   const project = props.project[0].projectDetails;
   return (
-    <div className="grid gap-6 lg:grid-cols-2 h-screen w-screen p-5 lg:p-10">
+    <div className="grid px-5 py-28 gap-6 lg:grid-cols-2 h-screen w-screen lg:px-10">
       <div className="flex justify-start align-center lg:col-span-full p-3">
         <h1 className="flex align-middle text-2xl md:text-3xl lg:text-5xl font-bold">
           {project.projectName}

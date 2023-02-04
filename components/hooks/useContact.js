@@ -1,18 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { fetchRequest } from '../../helpers';
 import usePopup from './usePopup';
 import useForm from './useForm';
+import { validateEmail } from '../../helpers';
 
 function useContact() {
-  const [emailSent, setEmailSent] = useState(false);
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [emailDirty, setEmailDirty] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = useState(
-    'Email address is required'
-  );
-  const [formValid, setFormValid] = useState(false);
+  const { emailValidation } = validateEmail();
+  const [submitDisabled, setSubmitDisabled] = useState(true);
   const [isShowing, showPopup, hidePopup, popupState, setError, setSuccess] =
     usePopup({
       message: '',
@@ -23,42 +17,19 @@ function useContact() {
     message: { value: '' },
   });
 
-  const blurHandler = (event) => {
-    switch (event) {
-      case 'email': {
-        setEmailDirty(true);
-        break;
-      }
-      default:
-        setEmailDirty(true);
-        break;
-    }
-  };
-
-  const createFormData = (formData) => {
+  const createFormData = useCallback(() => {
     const date = new Date(Date.now());
     return {
-      name: formData.inputs.name.value,
-      email: formData.inputs.email.value,
-      message: formData.inputs.message.value,
+      name: formState.inputs.name.value,
+      email: formState.inputs.email.value,
+      message: formState.inputs.message.value,
       date: date.toLocaleString('lv-LV', {
         hour12: false,
       }),
     };
-  };
+  }, [formState]);
 
-  const setSent = () => {
-    if (!emailSent) {
-      setEmailSent(true);
-    } else {
-      setTimeout(() => {
-        setEmailSent(false);
-      }, 100);
-    }
-  };
-
-  const sendMessage = async (event, formState) => {
-    event.preventDefault();
+  const sendMessage = async (formState) => {
     const formData = createFormData(formState);
     try {
       const result = await fetchRequest('/api/email', {
@@ -68,8 +39,8 @@ function useContact() {
       if (result.status === 200) {
         setSuccess(result.message);
         showPopup();
-
         setFormEmpty();
+        setSubmitDisabled(true);
       } else {
         setError(result.message);
         showPopup();
@@ -80,10 +51,29 @@ function useContact() {
     }
   };
 
-  const handleSendMessage = async (event, formState) => {
-    event.preventDefault();
-    await sendMessage(event, formState);
-  };
+  const handleSendMessage = useCallback(async () => {
+    if (!emailValidation(formState.inputs.email.value) && !submitDisabled) {
+      setSubmitDisabled(true);
+      setError('Please provide a valid email address');
+      showPopup();
+    } else {
+      await sendMessage(event, formState);
+    }
+  });
+
+  useEffect(() => {
+    if (
+      emailValidation(formState.inputs.email.value) &&
+      formState.inputs.message.value
+    ) {
+      setSubmitDisabled(false);
+    } else if (
+      !emailValidation(formState.inputs.email.value) ||
+      !formState.inputs.message.value
+    ) {
+      setSubmitDisabled(true);
+    }
+  }, [formState]);
 
   return {
     formState,
@@ -91,7 +81,7 @@ function useContact() {
     isShowing,
     popupState,
     hidePopup,
-    emailSent,
+    submitDisabled,
     handleSendMessage,
   };
 }

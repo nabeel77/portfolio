@@ -8,8 +8,8 @@ const useHeader = () => {
   const linkPlaceHoldersArr = [
     'Home',
     'Me',
-    'Expertise',
-    'Work',
+    'Skills',
+    'Projects',
     'Experience',
     'Contact',
   ];
