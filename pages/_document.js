@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en" data-theme="luxury">
       <Head />
+      <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <link
         rel="preload"
         href="/fonts/Orbitron-Regular.ttf"

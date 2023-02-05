@@ -10,6 +10,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
 import { getSkills, getProjects } from '../query/staticDataFetching';
+import Head from 'next/head';
 
 export default function Home({ scrollRefs, skills, projects }) {
   const [index, setIndex] = useState(null);
@@ -37,23 +38,28 @@ export default function Home({ scrollRefs, skills, projects }) {
   }, [index]);
 
   return (
-    <div className="">
-      <div className="py-28 px-10 flex flex-col gap-5">
-        {elements.map((item, index) => (
-          <div key={index}>
-            <div
-              ref={scrollRefs.current[index]}
-              className={`${index === 0 ? 'h-screen' : 'h-max'} w-full`}
-            >
-              {item}
+    <React.Fragment>
+      <Head>
+        <title>Nabeel Munir Portfolio</title>
+      </Head>
+      <div className="">
+        <div className="py-28 px-10 flex flex-col gap-5">
+          {elements.map((item, index) => (
+            <div key={index}>
+              <div
+                ref={scrollRefs.current[index]}
+                className={`${index === 0 ? 'h-screen' : 'h-max'} w-full`}
+              >
+                {item}
+              </div>
+              {index < elements.length - 1 && <Divider />}
             </div>
-            {index < elements.length - 1 && <Divider />}
-          </div>
-        ))}
-        <ScrollToTop />
+          ))}
+          <ScrollToTop />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </React.Fragment>
   );
 }
 
