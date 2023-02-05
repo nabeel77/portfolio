@@ -23,7 +23,7 @@ const Project = (props) => {
       </div>
       <div className="p-3 flex flex-col align-middle gap-5">
         <h3 className="text-2xl md:text-3xl">My responsibilities</h3>
-        <p className="text-md">{project.projectDescription}</p>
+        <p className="text-md">{project.responsibilities}</p>
       </div>
       <div className="p-3 flex flex-col align-middle gap-5 lg:col-span-full">
         <h3 className="text-xl md:text-2xl">Technologies</h3>
