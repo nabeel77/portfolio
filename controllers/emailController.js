@@ -1,7 +1,8 @@
 import { render } from '@react-email/render';
-
+import dotenv from 'dotenv';
 import { EmailToReceiver, EmailToSender, useSendMessage } from '../emails';
 
+dotenv.config();
 function MessageController() {
   const { sendMessage } = useSendMessage();
 
@@ -31,14 +32,14 @@ function MessageController() {
     );
 
     const emailOptionsForReceiver = {
-      from: 'nabeel.beeni30@gmail.com',
-      to: 'nabeel.beeni30@gmail.com',
+      from: process.env.EMAIL,
+      to: process.env.EMAIL,
       subject: `New 📧 From ${name}`,
       html: emailHtmlForReceiver,
     };
 
     const emailOptionsForSender = {
-      from: 'nabeel.beeni30@gmail.com',
+      from: process.env.EMAIL,
       to: email,
       subject: 'Thank you for your 📧',
       html: emailHtmlForSender,
