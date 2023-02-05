@@ -36,12 +36,12 @@ function useContact() {
         method: 'POST',
         body: JSON.stringify(formData),
       });
-      if (result.status === 200) {
+      if (result.status === 201) {
         setSuccess(result.message);
         showPopup();
         setFormEmpty();
         setSubmitDisabled(true);
-      } else {
+      } else if (result.status === 400) {
         setError(result.message);
         showPopup();
       }
@@ -57,7 +57,7 @@ function useContact() {
       setError('Please provide a valid email address');
       showPopup();
     } else {
-      await sendMessage(event, formState);
+      await sendMessage(formState);
     }
   });
 

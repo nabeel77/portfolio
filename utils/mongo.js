@@ -2,7 +2,6 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 
 const MongoClientConnection = (() => {
   let db = null;
-  let instance = 0;
 
   const DbConnect = async () => {
     try {
@@ -21,7 +20,6 @@ const MongoClientConnection = (() => {
 
   const Get = async () => {
     try {
-      instance++; // this is just to count how many times our singleton is called.
       if (db != null) {
         return db;
       } else {

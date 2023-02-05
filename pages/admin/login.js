@@ -15,7 +15,7 @@ const AdminLogin = () => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    const result = await fetch('/api/login', {
+    const result = await fetch('/api/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
