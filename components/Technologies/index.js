@@ -23,7 +23,7 @@ const Technologies = ({ skillSetsArr, skillSetsObj, showIcons }) => {
           <div className="grid grid-cols-md lg:grid-cols-lg gap-16">
             {devTechStack.map((item, index) => (
               <div className="flex flex-col gap-2" key={index}>
-                <h3 className="text-primary font-OrbitronBold">
+                <h3 className="text-lg md:text-xl text-primary font-OrbitronBold">
                   {Object.keys(item)[0]}
                 </h3>
                 <ul className="flex flex-col gap-2">
