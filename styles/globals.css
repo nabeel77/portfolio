@@ -118,7 +118,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  border-image: linear-gradient(#60ffa2d9, #5affaa) 30;
+  border-image: linear-gradient(#dca54c, #ffffff) 30;
   border-width: 3px;
   border-style: solid;
   transition: all 0.5s;

@@ -132,7 +132,7 @@ const Projects = () => {
       />
       <div className="w-full py-28 flex flex-col gap-5">
         <Button
-          styles={`w-10 h-10 ${buttonStyles}`}
+          styles={`w-10 h-10 grid ${buttonStyles}`}
           handleClick={handleFormState}
         >
           {formShow ? (
@@ -142,7 +142,10 @@ const Projects = () => {
           )}
         </Button>
         {formShow && (
-          <div className="z-50 my-0 mx-auto p-5 flex m-4 rounded shadow bg-base-200 w-full lg:w-9/12">
+          <div className="z-50 my-0 flex flex-col justify-center items-center gap-5 mx-auto p-5 flex m-4 rounded shadow bg-base-200 w-full lg:w-9/12">
+            <h1 className="text-base lg:text-2xl font-OrbitronBold">
+              Add a new project
+            </h1>
             <form
               onSubmit={submitHandler}
               className="p-5 w-full flex flex-col justify-center items-center gap-4"
