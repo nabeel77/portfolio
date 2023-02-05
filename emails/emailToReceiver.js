@@ -8,6 +8,7 @@ import { Link } from '@react-email/link';
 import { Preview } from '@react-email/preview';
 import { Section } from '@react-email/section';
 import { Text } from '@react-email/text';
+import Nabeel from '../public/images/Nabeel.jpg';
 import * as React from 'react';
 
 export default function EmailToReceiver({ name, email, message, dateString }) {
@@ -17,15 +18,15 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
       <Preview>New 📧 From {name}</Preview>
       <Section style={main}>
         <Container style={container}>
-          {/* <Section style={{ marginTop: '32px' }}>
-						<Img
-							src="https://www.mihailsfjodorovs.com/icon-512x512.png"
-							width="80"
-							height="80"
-							alt="M.F. Portfolio Page"
-							style={logo}
-						/>
-					</Section> */}
+          <Section style={{ marginTop: '32px' }}>
+            <Img
+              src={Nabeel}
+              width="80"
+              height="80"
+              alt="N.M. Portfolio"
+              style={logo}
+            />
+          </Section>
           <Text style={h1}>
             New 📧 From <strong>{name}</strong>
           </Text>
@@ -64,12 +65,7 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
               {email}
             </Link>{' '}
             using contact form on my{' '}
-            <Link
-              href="https://www.mihailsfjodorovs.com/"
-              target="_blank"
-              style={link}
-              rel="noreferrer"
-            >
+            <Link href="" target="_blank" style={link} rel="noreferrer">
               personal portfolio page
             </Link>
             .
@@ -83,16 +79,16 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
             }}
           >
             <Link
-              href="https://www.linkedin.com/in/mihails-fjodorovs-361a0a182/"
+              href="https://www.linkedin.com/in/nabeel-munir-8a7a99134/"
               target="_blank"
               style={link}
               rel="noreferrer"
             >
               <Img
-                src="https://www.mihailsfjodorovs.com/linkedinLogo.png"
+                src="/images/linkedinLogo.png"
                 width="24"
                 height="24"
-                alt="M.F. LinkedIn Profile"
+                alt="N.M. LinkedIn Profile"
                 style={{
                   ...logo,
                   filter: 'grayscale(100%)',
@@ -101,16 +97,16 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
               />
             </Link>
             <Link
-              href="https://github.com/eXebyss"
+              href="https://github.com/Nabeel77"
               target="_blank"
               style={link}
               rel="noreferrer"
             >
               <Img
-                src="https://www.mihailsfjodorovs.com/githubLogo.png"
+                src="githubLogo.png"
                 width="24"
                 height="24"
-                alt="M.F. Github Profile"
+                alt="N.M. Github Profile"
                 style={{
                   ...logo,
                   filter: 'grayscale(100%)',
@@ -128,7 +124,7 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
                 src="https://www.mihailsfjodorovs.com/codewarsLogo.png"
                 width="24"
                 height="24"
-                alt="M.F. Codewars Profile"
+                alt="N.M. Codewars Profile"
                 style={{
                   ...logo,
                   filter: 'grayscale(100%)',
@@ -146,7 +142,7 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
                 src="https://www.mihailsfjodorovs.com/webLogo.png"
                 width="24"
                 height="24"
-                alt="M.F. Portfolio Page"
+                alt="N.M. Portfolio Page"
                 style={{
                   ...logo,
                   filter: 'grayscale(100%)',
@@ -162,13 +158,13 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
 }
 
 const main = {
-  backgroundColor: '#0f172a',
+  backgroundColor: '#021505',
   margin: '0 auto',
 };
 
 const container = {
-  backgroundColor: '#0e1526',
-  border: '1px solid #38bdf8',
+  backgroundColor: '#171212',
+  border: '1px solid #1db853',
   borderRadius: '5px',
   margin: '40px auto',
   padding: '20px',
@@ -179,7 +175,7 @@ const logo = {
 };
 
 const h1 = {
-  color: '#b5cdf5',
+  color: '#b2ffcd',
   fontFamily:
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   fontSize: '24px',
@@ -190,12 +186,12 @@ const h1 = {
 };
 
 const link = {
-  color: '#38bdf8',
+  color: '#1db853',
   textDecoration: 'none',
 };
 
 const text = {
-  color: '#b5cdf5',
+  color: '#b2ffcd',
   fontFamily:
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   fontSize: '14px',
@@ -203,9 +199,9 @@ const text = {
 };
 
 const btn = {
-  backgroundColor: '#1e293b',
+  backgroundColor: '#1db753',
   borderRadius: '5px',
-  color: '#b5cdf5',
+  color: '#b2ffcd',
   fontFamily:
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   fontSize: '12px',

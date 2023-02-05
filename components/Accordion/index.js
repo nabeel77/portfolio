@@ -61,7 +61,11 @@ const Accordion = ({ content }) => {
               ))}
             </div>
           </div>
-          <div className="row-start-1 lg:col-start-2">
+          <div
+            className={`${
+              content.company === 'Magebit' && 'h-90 -mt-11 lg:h-max lg:mt-5'
+            } row-start-1 lg:col-start-2`}
+          >
             {content.companyLogo}
           </div>
         </motion.div>

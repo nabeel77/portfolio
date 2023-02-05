@@ -78,6 +78,7 @@
     "react-multi-select-component": "^4.3.4",
     "react-particles": "^2.8.0",
     "react-select": "^5.7.0",
+    "react-spinners": "^0.13.8",
     "react-tsparticles": "^2.8.0",
     "split-type": "^0.3.3",
     "tailwindcss": "^3.2.4",

@@ -4,6 +4,7 @@ import Input from '../Input';
 import Popup from '../Popup';
 import popupIcons from '../../staticData/popupIcons';
 import useDebounce from '../hooks/useDebounce';
+import { ClipLoader } from 'react-spinners';
 
 const Contact = () => {
   const {
@@ -14,6 +15,7 @@ const Contact = () => {
     hidePopup,
     submitDisabled,
     handleSendMessage,
+    sendingMessage,
   } = useContact();
 
   return (
@@ -68,7 +70,11 @@ const Contact = () => {
             className="btn bg-accent text-primary"
             onClick={useDebounce(handleSendMessage, 500)}
           >
-            Submit
+            {sendingMessage ? (
+              <ClipLoader className="text-secondary" />
+            ) : (
+              'Submit'
+            )}
           </button>
         </div>
       </div>

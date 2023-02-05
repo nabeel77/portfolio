@@ -7,6 +7,7 @@ import { validateEmail } from '../../helpers';
 function useContact() {
   const { emailValidation } = validateEmail();
   const [submitDisabled, setSubmitDisabled] = useState(true);
+  const [sendingMessage, setSendingMessage] = useState(false);
   const [isShowing, showPopup, hidePopup, popupState, setError, setSuccess] =
     usePopup({
       message: '',
@@ -41,17 +42,21 @@ function useContact() {
         showPopup();
         setFormEmpty();
         setSubmitDisabled(true);
+        setSendingMessage(false);
       } else if (result.status === 400) {
         setError(result.message);
         showPopup();
+        setSendingMessage(false);
       }
     } catch (error) {
       setError(error.message);
       showPopup();
+      setSendingMessage(false);
     }
   };
 
   const handleSendMessage = useCallback(async () => {
+    setSendingMessage(true);
     if (!emailValidation(formState.inputs.email.value) && !submitDisabled) {
       setSubmitDisabled(true);
       setError('Please provide a valid email address');
@@ -83,6 +88,7 @@ function useContact() {
     hidePopup,
     submitDisabled,
     handleSendMessage,
+    sendingMessage,
   };
 }
 
