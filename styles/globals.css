@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: Orbitron-bold;
-  src: url('/fonts/Orbitron-bold.ttf');
+  src: url('/fonts/Orbitron-Bold.ttf');
 }
 :root {
   --max-width: 1100px;
@@ -156,7 +156,7 @@ a {
 .char {
   transform: translateY(115px);
   transition: transform 0.5s;
-  font-family: Orbitron-bold;
+  font-family: 'Orbitron-bold';
 }
 
 .bouncing {

@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="h-[75%] relative flex flex-col gap-4 justify-center items-center">
         <h1
           id="name"
-          className="text-primary text-3xl md:text-5xl lg:text-7xl font-bold"
+          className="text-primary text-3xl md:text-5xl lg:text-7xl font-OrbitronBold"
         >
           NABEEL MUNIR
         </h1>

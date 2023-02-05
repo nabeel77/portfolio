@@ -11,7 +11,7 @@
     "dev": "nodemon ./server/index.js",
     "ngrok": "ngrok http 3000",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node ./server/index.js",
     "lint": "next lint",
     "prettier": "prettier --write .",
     "prepare": "husky install",
