@@ -30,7 +30,9 @@ const Contact = () => {
         <h1 className="my-0 mx-auto text-accent text-xl md:text-3xl lg:text-4xl font-OrbitronBold">
           Contact me
         </h1>
-        <h3 className={`${globalDesigns.responsiveFontStyles} my-0 mx-auto`}>
+        <h3
+          className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium my-0 mx-auto`}
+        >
           I am available for any inquiries regarding work opportunities,
           creative ideas, constructive feedback, or questions. I will make every
           effort to respond promptly.
