@@ -8,10 +8,10 @@ const ScrollToTop = () => {
     <div>
       {visible && (
         <Button
-          styles="rounded fixed right-10 bottom-10 cursor-pointer flex justify-center items-center w-10 h-16 lg:w-12 lg:h-24 rounded-full border border-solid border-primary"
+          styles="z-99999999 rounded fixed right-10 bottom-10 cursor-pointer flex justify-center items-center w-10 h-16 lg:w-12 lg:h-24 rounded-full border border-solid border-accent"
           handleClick={scrollToTop}
         >
-          <HiArrowNarrowUp className="text-primary h-5 w-5 lg:h-12 lg:w-8 bg-transparent" />
+          <HiArrowNarrowUp className="text-accent h-5 w-5 lg:h-12 lg:w-8 bg-transparent" />
         </Button>
       )}
     </div>

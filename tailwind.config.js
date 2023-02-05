@@ -128,6 +128,8 @@ module.exports = {
       },
       fontFamily: {
         OrbitronBold: ['Orbitron-bold', 'Arial', 'sans-serif'],
+        RalewayMedium: ['Raleway-Medium', 'Arial', 'sans-serif'],
+        RalewayBold: ['Raleway-Bold', 'Arial', 'sans-serif'],
       },
       gridTemplateColumns: {
         lg: 'repeat(auto-fill, minmax(200px, 1fr))',
