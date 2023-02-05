@@ -43,17 +43,19 @@ const Accordion = ({ content }) => {
         >
           <div className="flex flex-col gap-5 row-span-2">
             <h3
-              className={`${globalDesigns.responsiveFontStyles} text-accent flex gap-2`}
+              className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium  text-accent flex gap-2`}
             >
               <ImLocation2 className="w-5 h-5" /> {content.location}
             </h3>
-            <p className={`${globalDesigns.responsiveFontStyles} text-accent`}>
+            <p
+              className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium  text-accent`}
+            >
               {content.responsibilities}
             </p>
             <div className="flex flex-wrap gap-2">
               {content.technologies.map((item, index) => (
                 <p
-                  className={`${globalDesigns.responsiveFontStyles} text-primary px-5 py-2 rounded-full bg-accent`}
+                  className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium  text-primary px-5 py-2 rounded-full bg-accent`}
                   key={index}
                 >
                   {item}

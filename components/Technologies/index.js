@@ -30,12 +30,12 @@ const Technologies = ({ skillSetsArr, skillSetsObj, showIcons }) => {
                   {item[Object.keys(item)[0]].map((tech, index) => (
                     <li
                       key={index}
-                      className={`${globalDesigns.responsiveFontStyles} flex gap-2`}
+                      className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium flex gap-2`}
                     >
                       {devIcons[tech]} {tech}{' '}
                       {primaryTechnologies.includes(tech) && (
                         <h3
-                          className={`${globalDesigns.responsiveFontStyles} font-OrbitronBold text-accent`}
+                          className={`${globalDesigns.responsiveFontStyles} font-RalewayBold text-accent`}
                         >
                           (Primary)
                         </h3>
