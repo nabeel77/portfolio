@@ -8,7 +8,7 @@ import Contact from '../components/Contact';
 import Divider from '../components/Divider';
 import ScrollToTop from '../components/ScrollToTop';
 import { useRouter } from 'next/router';
-import { getSkills, getProjects } from '../server/staticDataFetching';
+import { getSkills, getProjects } from '../query/staticDataFetching';
 
 export default function Home({ scrollRefs, skills, projects }) {
   const [index, setIndex] = useState(null);

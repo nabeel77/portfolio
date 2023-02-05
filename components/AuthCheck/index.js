@@ -7,7 +7,7 @@ const AuthCheck = (props) => {
   const [validUser, setValidUser] = useState(false);
   const [loader, showLoader, hideLoader] = useLoader();
   const authenticateUser = useCallback(async () => {
-    const result = await fetch('/api/authenticate', {
+    const result = await fetch('/api/user/authenticate', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

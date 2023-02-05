@@ -1,14 +1,8 @@
-import MongoClientConnection from '../db';
-import createLoggerInstance from '../logger';
+import getDb from '../dbInstace';
+import createLoggerInstance from '../../logger';
 
 const logger = createLoggerInstance();
-const getDb = async () => {
-  try {
-    return await MongoClientConnection.Get();
-  } catch (err) {
-    logger.error(err);
-  }
-};
+
 export const getProjectNames = async () => {
   try {
     const db = await getDb();
