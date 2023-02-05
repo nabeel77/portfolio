@@ -15,7 +15,9 @@ export default function useSendMessage() {
     sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
     if (!email) {
-      res.status(400).json({ message: 'Email address is required!' });
+      res
+        .status(400)
+        .json({ status: 400, message: 'Email address is required!' });
     } else if (emailCheckPass) {
       (async () => {
         try {
@@ -26,9 +28,12 @@ export default function useSendMessage() {
             } catch (error) {
               if (error.response) {
                 console.error(error.response.body);
-                res.status(400).json({
-                  message: `1: Email sending Error: ${error.response.body.errors[0].message}`,
-                });
+                res
+                  .status(400)
+                  .json({
+                    status: 400,
+                    message: `1: Email sending Error: ${error.response.body.errors[0].message}`,
+                  });
                 return;
               }
 
@@ -39,27 +44,35 @@ export default function useSendMessage() {
             }
           })();
           res.status(201).json({
-            message: 'Email to receiver and sender sent successfully!',
+            status: 201,
+            message:
+              'Thank you for your message 😊. Your message was sent successfully.',
           });
         } catch (error) {
           if (error.response) {
             console.error(error.response.body);
-            res.status(400).json({
-              message: `2: Email sending Error: ${error.response.body.errors[0].message}`,
-            });
+            res
+              .status(400)
+              .json({
+                status: 400,
+                message: `2: Email sending Error: ${error.response.body.errors[0].message}`,
+              });
             return;
           }
 
           console.error(error);
-          res.status(400).json({
-            message: `2: Email sending Error: ${error}`,
-          });
+          res
+            .status(400)
+            .json({ status: 400, message: `2: Email sending Error: ${error}` });
         }
       })();
     } else {
-      res.status(400).json({
-        message: 'Please provide a valid e-mail address!',
-      });
+      res
+        .status(400)
+        .json({
+          status: 400,
+          message: 'Please provide a valid e-mail address!',
+        });
     }
   };
 
