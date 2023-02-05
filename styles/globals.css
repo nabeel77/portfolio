@@ -12,6 +12,18 @@
   font-family: Orbitron-bold;
   src: url('/fonts/Orbitron-Bold.ttf');
 }
+@font-face {
+  font-family: Raleway-Medium;
+  src: url('/fonts/Raleway-Medium.ttf');
+}
+@font-face {
+  font-family: Raleway-Black;
+  src: url('/fonts/Raleway-Black.ttf');
+}
+@font-face {
+  font-family: Raleway-Bold;
+  src: url('/fonts/Raleway-Bold.ttf');
+}
 :root {
   --max-width: 1100px;
   --border-radius: 12px;

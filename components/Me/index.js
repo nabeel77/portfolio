@@ -14,7 +14,9 @@ const Me = () => {
           <h3 className="text-lg md:text-xl font-OrbitronBold text-primary">
             Introduction
           </h3>
-          <p className={`${globalDesigns.responsiveFontStyles} text-justify`}>
+          <p
+            className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium text-justify`}
+          >
             Hi. My name is{' '}
             <strong className="text-primary">Nabeel Munir</strong>. I am a full
             stack web developer. Apart from web development, I can also do
@@ -25,7 +27,9 @@ const Me = () => {
           <h3 className="text-lg md:text-xl font-[Orbitron-bold] text-primary">
             Goals
           </h3>
-          <p className={`${globalDesigns.responsiveFontStyles} text-justify`}>
+          <p
+            className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium text-justify`}
+          >
             My ultimate objective is to enhance my{' '}
             <strong className="text-primary">Full-Stack</strong> javascript
             development skills. I have proficient experience in{' '}
@@ -51,7 +55,9 @@ const Me = () => {
           <h3 className="text-lg md:text-xl font-[Orbitron-bold] text-primary">
             Hobbies
           </h3>
-          <p className={`${globalDesigns.responsiveFontStyles} text-justify`}>
+          <p
+            className={`${globalDesigns.responsiveFontStyles} font-RalewayMedium text-justify`}
+          >
             During leisure hours, I find pleasure in{' '}
             <strong className="text-primary">cooking</strong>,{' '}
             <strong className="text-primary">socializing</strong> with
