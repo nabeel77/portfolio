@@ -19,7 +19,7 @@ import { fetchRequest } from '../../../helpers';
 
 const Projects = () => {
   const animatedComponents = makeAnimated();
-  const [onImageChange, error, changeErrorState, imageUrlsState] =
+  const [, onImageChange, error, changeErrorState, imageUrlsState] =
     useImageUpload([]);
   const [isShowing, showPopup, hidePopup, popupState, setError, setSuccess] =
     usePopup({
@@ -90,9 +90,10 @@ const Projects = () => {
         setError(err.message);
         showPopup();
       });
-    if (result.status === 'success' && Array.isArray(result.result)) {
+    if (result && result.status === 'success' && Array.isArray(result.result)) {
       setAllProjects(<AllProjects projectsArr={result.result} />);
     } else if (
+      result &&
       result.status === 'success' &&
       result.result === 'no data found'
     ) {

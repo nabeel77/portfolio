@@ -4,7 +4,7 @@ import { checkUser, autheticateUser } from '../../controllers/user';
 
 const UserRouter = new Router();
 
-UserRouter.post('/api/login', koaBody(), checkUser);
-UserRouter.get('/api/authenticate', koaBody(), autheticateUser);
+UserRouter.post('/api/user/login', koaBody(), checkUser);
+UserRouter.get('/api/user/authenticate', koaBody(), autheticateUser);
 
 export default UserRouter;
