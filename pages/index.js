@@ -7,6 +7,7 @@ import Experience from '../components/Experience';
 import Contact from '../components/Contact';
 import Divider from '../components/Divider';
 import ScrollToTop from '../components/ScrollToTop';
+import Footer from '../components/Footer';
 import { useRouter } from 'next/router';
 import { getSkills, getProjects } from '../query/staticDataFetching';
 
@@ -51,6 +52,7 @@ export default function Home({ scrollRefs, skills, projects }) {
         ))}
         <ScrollToTop />
       </div>
+      <Footer />
     </div>
   );
 }

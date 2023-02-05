@@ -20,9 +20,9 @@ export const devExperience = [
     companyLogo: (
       <svg
         className="libautech"
-        width="300"
+        width="200"
         height="160"
-        viewBox="0 150 1700 100"
+        viewBox="0 100 1900 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -129,7 +129,7 @@ export const devExperience = [
         width={80}
         height={50}
         src={Magebit}
-        style={{ objectFit: 'contain' }}
+        style={{ objectFit: 'contain', marginTop: '30px' }}
       />
     ),
   },
