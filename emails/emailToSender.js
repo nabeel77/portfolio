@@ -19,10 +19,10 @@ export default function EmailToSender({ name, email, message, dateString }) {
         <Container style={container}>
           <Section style={{ marginTop: '32px' }}>
             <Img
-              src="https://www.mihailsfjodorovs.com/icon-512x512.png"
+              src={Nabeel}
               width="80"
               height="80"
-              alt="M.F. Portfolio Page"
+              alt="N.M. Portfolio"
               style={logo}
             />
           </Section>
@@ -64,12 +64,7 @@ export default function EmailToSender({ name, email, message, dateString }) {
               {email}
             </Link>{' '}
             using contact form on my{' '}
-            <Link
-              href="https://www.mihailsfjodorovs.com/"
-              target="_blank"
-              style={link}
-              rel="noreferrer"
-            >
+            <Link href="" target="_blank" style={link} rel="noreferrer">
               personal portfolio page
             </Link>
             .
@@ -83,16 +78,16 @@ export default function EmailToSender({ name, email, message, dateString }) {
             }}
           >
             <Link
-              href="https://www.linkedin.com/in/mihails-fjodorovs-361a0a182/"
+              href="https://www.linkedin.com/in/nabeel-munir-8a7a99134/"
               target="_blank"
               style={link}
               rel="noreferrer"
             >
               <Img
-                src="https://www.mihailsfjodorovs.com/linkedinLogo.png"
+                src="/images/linkedinLogo.png"
                 width="24"
                 height="24"
-                alt="M.F. LinkedIn Profile"
+                alt="N.M. LinkedIn Profile"
                 style={{
                   ...logo,
                   filter: 'grayscale(100%)',
@@ -101,52 +96,16 @@ export default function EmailToSender({ name, email, message, dateString }) {
               />
             </Link>
             <Link
-              href="https://github.com/eXebyss"
+              href="https://github.com/Nabeel77"
               target="_blank"
               style={link}
               rel="noreferrer"
             >
               <Img
-                src="https://www.mihailsfjodorovs.com/githubLogo.png"
+                src="githubLogo.png"
                 width="24"
                 height="24"
-                alt="M.F. Github Profile"
-                style={{
-                  ...logo,
-                  filter: 'grayscale(100%)',
-                  margin: '10px auto',
-                }}
-              />
-            </Link>
-            <Link
-              href="https://www.codewars.com/users/eXebyss"
-              target="_blank"
-              style={link}
-              rel="noreferrer"
-            >
-              <Img
-                src="https://www.mihailsfjodorovs.com/codewarsLogo.png"
-                width="24"
-                height="24"
-                alt="M.F. Codewars Profile"
-                style={{
-                  ...logo,
-                  filter: 'grayscale(100%)',
-                  margin: '10px auto',
-                }}
-              />
-            </Link>
-            <Link
-              href="https://www.mihailsfjodorovs.com/"
-              target="_blank"
-              style={link}
-              rel="noreferrer"
-            >
-              <Img
-                src="https://www.mihailsfjodorovs.com/webLogo.png"
-                width="24"
-                height="24"
-                alt="M.F. Portfolio Page"
+                alt="N.M. Github Profile"
                 style={{
                   ...logo,
                   filter: 'grayscale(100%)',
