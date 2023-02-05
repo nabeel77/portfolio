@@ -41,6 +41,9 @@ export const technologies = [
   { value: 'PWA Studio', label: 'PWA Studio' },
   { value: 'Magento 2', label: 'Magento 2' },
   { value: 'Shopify', label: 'Shopify' },
+  { value: 'REST API', label: 'REST API' },
+  { value: 'AWS', label: 'AWS' },
+  { value: 'S3', label: 'S3' },
 ];
 
 export const devTechStack = [

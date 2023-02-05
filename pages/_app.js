@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }) {
   const [isMobileMenuOpen, scrollRefs, generateLinkTags, handleMenuClick] =
     useHeader();
   const isDashboard = router.pathname.includes('dashboard');
+  const isLogin = router.pathname.includes('login');
   const menuItems = [
     {
       title: 'Projects',
@@ -31,6 +32,8 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
           </div>
         </AuthCheck>
+      ) : isLogin ? (
+        <Component {...pageProps} />
       ) : (
         <div>
           <Header
