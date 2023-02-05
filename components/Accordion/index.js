@@ -39,7 +39,7 @@ const Accordion = ({ content }) => {
           }}
           className={`${
             isActive ? 'block' : 'hidden'
-          } accordion-content grid grid-rows-accordionSm lg:grid-cols-accordionPop gap-2 items-center px-4 py-5 -mt-5 w-full md:w-[60%] bg-primary rounded -mt-2`}
+          } accordion-content grid grid-rows-accordionSm lg:grid-cols-accordionPop gap-2 items-center px-4 py-5 -mt-5 w-full md:w-[60%] bg-primary rounded -mt-2 select-auto`}
         >
           <div className="flex flex-col gap-5 row-span-2">
             <h3

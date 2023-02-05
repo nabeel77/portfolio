@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Menu = (props) => {
   const links = props.menuItems.map((item, index) => {
     return (
-      <Link className="btn-ghost" key={index} href={item.path}>
+      <Link className="btn-ghost active:bg-green" key={index} href={item.path}>
         {item.title}
       </Link>
     );

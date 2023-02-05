@@ -18,6 +18,7 @@ module.exports = {
         },
         night: {
           ...require('daisyui/src/colors/themes')['[data-theme=night]'],
+          accent: '#b4c6ef',
           'primary-focus': 'mediumblue',
         },
         forest: {
@@ -74,8 +75,8 @@ module.exports = {
       },
       boxShadow: {
         light: '0 20px 25px -5px rgba(106, 177, 135, 0.4)',
-        '3xl': '0 35px 60px -15px rgba(33, 245, 255, 0.4)',
-        '5xl': '0 36px 100px 5px rgba(33, 245, 255, 0.5)',
+        '3xl': '0 20px 30px -20px rgba(220, 165, 76, 0.3)',
+        '5xl': '0 36px 100px 5px rgba(220, 165, 76, 0.5)',
       },
       keyframes: {
         fullspin: {

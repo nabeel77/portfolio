@@ -18,11 +18,15 @@ const Project = (props) => {
         </h1>
       </div>
       <div className="p-3 flex flex-col align-middle gap-5">
-        <h3 className="text-2xl md:text-3xl">Project description</h3>
+        <h3 className="text-2xl md:text-3xl font-RalewayMedium">
+          Project description
+        </h3>
         <p className="text-md">{project.projectDescription}</p>
       </div>
       <div className="p-3 flex flex-col align-middle gap-5">
-        <h3 className="text-2xl md:text-3xl">My responsibilities</h3>
+        <h3 className="text-2xl md:text-3xl font-RalewayMedium">
+          My responsibilities
+        </h3>
         <p className="text-md">{project.responsibilities}</p>
       </div>
       <div className="p-3 flex flex-col align-middle gap-5 lg:col-span-full">
@@ -43,15 +47,16 @@ const Project = (props) => {
           })}
         </ul>
       </div>
-      <div className="p-3 relative lg:col-span-full">
+      <div className="p-3 relative flex flex-col gap-5 lg:col-span-full">
         {project.images.map((image, index) => {
           return (
-            <img
-              className="w-full max-w-full h-auto object-contain"
-              src={image.Location}
-              key={index}
-              loading="lazy"
-            />
+            <div className="rounded" key={index}>
+              <img
+                className="w-full rounded max-w-full h-auto object-contain"
+                src={image.Location}
+                loading="lazy"
+              />
+            </div>
           );
         })}
       </div>
