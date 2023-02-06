@@ -8,7 +8,6 @@ import { Link } from '@react-email/link';
 import { Preview } from '@react-email/preview';
 import { Section } from '@react-email/section';
 import { Text } from '@react-email/text';
-import Nabeel from '../public/images/Nabeel.jpg';
 import * as React from 'react';
 
 export default function EmailToReceiver({ name, email, message, dateString }) {
@@ -20,15 +19,15 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
         <Container style={container}>
           <Section style={{ marginTop: '32px' }}>
             <Img
-              src={Nabeel}
+              src="https://projectimages77.s3.eu-central-1.amazonaws.com/NabeelMunir.png"
               width="80"
               height="80"
               alt="N.M. Portfolio"
-              style={logo}
+              style={{ ...logo, borderRadius: '100%' }}
             />
           </Section>
           <Text style={h1}>
-            New 📧 From <strong>{name}</strong>
+            New Email From <strong>{name}</strong>
           </Text>
           <Text style={{ ...text, fontStyle: 'italic' }}>
             <strong>Email: </strong>
@@ -48,7 +47,7 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
           <Text style={text}>{dateString}</Text>
           <Section style={{ textAlign: 'center' }}>
             <Button pX={20} pY={12} style={btn} href={`mailto:${email}`}>
-              Reply 📨
+              Reply
             </Button>
           </Section>
           <Text style={text}>
@@ -65,7 +64,12 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
               {email}
             </Link>{' '}
             using contact form on my{' '}
-            <Link href="" target="_blank" style={link} rel="noreferrer">
+            <Link
+              href="https://www.nabeelmunir.com/"
+              target="_blank"
+              style={link}
+              rel="noreferrer"
+            >
               personal portfolio page
             </Link>
             .
@@ -85,7 +89,7 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
               rel="noreferrer"
             >
               <Img
-                src="/images/linkedinLogo.png"
+                src="https://projectimages77.s3.eu-central-1.amazonaws.com/linkedinLogo.png"
                 width="24"
                 height="24"
                 alt="N.M. LinkedIn Profile"
@@ -103,7 +107,7 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
               rel="noreferrer"
             >
               <Img
-                src="githubLogo.png"
+                src="https://projectimages77.s3.eu-central-1.amazonaws.com/githubLogo.png"
                 width="24"
                 height="24"
                 alt="N.M. Github Profile"
@@ -115,38 +119,21 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
               />
             </Link>
             <Link
-              href="https://www.codewars.com/users/eXebyss"
+              href="https://www.nabeelmunir.com/"
               target="_blank"
               style={link}
               rel="noreferrer"
             >
               <Img
-                src="https://www.mihailsfjodorovs.com/codewarsLogo.png"
+                src="https://projectimages77.s3.eu-central-1.amazonaws.com/NabeelMunir.png"
                 width="24"
                 height="24"
-                alt="N.M. Codewars Profile"
+                alt="N.M. Portfolio"
                 style={{
                   ...logo,
                   filter: 'grayscale(100%)',
                   margin: '10px auto',
-                }}
-              />
-            </Link>
-            <Link
-              href="https://www.mihailsfjodorovs.com/"
-              target="_blank"
-              style={link}
-              rel="noreferrer"
-            >
-              <Img
-                src="https://www.mihailsfjodorovs.com/webLogo.png"
-                width="24"
-                height="24"
-                alt="N.M. Portfolio Page"
-                style={{
-                  ...logo,
-                  filter: 'grayscale(100%)',
-                  margin: '10px auto',
+                  borderRadius: '100%',
                 }}
               />
             </Link>
