@@ -14,7 +14,7 @@ export default function EmailToReceiver({ name, email, message, dateString }) {
   return (
     <Html>
       <Head />
-      <Preview>New 📧 From {name}</Preview>
+      <Preview>New Email From {name}</Preview>
       <Section style={main}>
         <Container style={container}>
           <Section style={{ marginTop: '32px' }}>
