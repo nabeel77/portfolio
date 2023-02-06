@@ -9,6 +9,7 @@ import Popup from '../../../components/Popup';
 import { devIcons } from '../../../staticData/devIcons';
 import Technologies from '../../../components/Technologies';
 import { technologies } from '../../../staticData/devSkills';
+import Head from 'next/head';
 
 const Skills = () => {
   const animatedComponents = makeAnimated();
@@ -75,7 +76,10 @@ const Skills = () => {
   }, [getSkills]);
 
   return (
-    <>
+    <React.Fragment>
+      <Head>
+        <title>Skills</title>
+      </Head>
       <Popup
         isShowing={isShowing}
         state={globalDesigns[popupState.state]}
@@ -118,7 +122,7 @@ const Skills = () => {
           showIcons={true}
         />
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
