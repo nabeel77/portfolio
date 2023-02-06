@@ -34,14 +34,14 @@ function MessageController() {
     const emailOptionsForReceiver = {
       from: process.env.EMAIL,
       to: process.env.EMAIL,
-      subject: `New 📧 From ${name}`,
+      subject: `New Email From ${name}`,
       html: emailHtmlForReceiver,
     };
 
     const emailOptionsForSender = {
       from: process.env.EMAIL,
       to: email,
-      subject: 'Thank you for your 📧',
+      subject: 'Thank you for your Email',
       html: emailHtmlForSender,
     };
 

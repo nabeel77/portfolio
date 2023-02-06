@@ -75,7 +75,7 @@ const Contact = () => {
             {sendingMessage ? (
               <ClipLoader className="text-secondary" />
             ) : (
-              'Submit'
+              'Send'
             )}
           </button>
         </div>
