@@ -1,16 +1,14 @@
 import dotenv from 'dotenv';
-import createLoggerInstance from '../logger';
 import getDb from './dbInstace';
 
 dotenv.config();
-const logger = createLoggerInstance();
 export const getUserSkills = async (username) => {
   try {
     const db = await getDb();
     const result = await db.collection('skills').findOne({ username });
     return result;
   } catch (err) {
-    logger.error(err.message);
+    console.error(err.message);
     return {
       status: 400,
       data: { status: 'error', message: 'Failed to get skills' },
@@ -45,7 +43,7 @@ export const userSkills = async (cookie, skills) => {
       return returnMessage;
     }
   } catch (err) {
-    logger.error(err.message);
+    console.error(err.message);
     return { status: 400, data: { status: 'error', message: err.message } };
   }
 };
@@ -61,7 +59,7 @@ export const updateSkills = async (username, skills) => {
       data: { status: 'success', message: 'Skills updated successfully' },
     };
   } catch (err) {
-    logger.error(err.message);
+    console.error(err.message);
     return {
       statue: 400,
       data: { status: 'error', message: 'Failed to update, try again.' },
@@ -78,7 +76,7 @@ export const addProjects = async (projectDetails) => {
       data: { status: 'success', message: 'Project added successfully' },
     };
   } catch (err) {
-    logger.error(err.message);
+    console.error(err.message);
     return {
       status: 400,
       data: { status: 'error', message: 'Failed to add project, try again.' },
@@ -93,7 +91,7 @@ export const getProjects = async () => {
     const projectData = result.length ? result : 'no data found';
     return { status: 200, data: { status: 'success', result: projectData } };
   } catch (err) {
-    logger.error(err.message);
+    console.error(err.message);
     return {
       status: 400,
       data: { status: 'error', message: 'Failed to get projects, try again.' },
