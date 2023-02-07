@@ -1,12 +1,10 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import createLoggerInstance from '../logger';
 import getDb from './dbInstace';
 import { serialize } from 'cookie';
 
 dotenv.config();
-const logger = createLoggerInstance();
 export const getUser = async (username) => {
   const db = await getDb();
   const user = await db.collection('adminUser').findOne({ username });
@@ -43,7 +41,7 @@ export const checkUserCredentials = async (res, username, password) => {
       };
     }
   } catch (err) {
-    logger.error(err.message);
+    console.error(err.message);
     return {
       status: 401,
       data: { status: 'error', message: 'Invalid username or password' },
@@ -59,7 +57,7 @@ export const authenticate = async (token) => {
       data: { status: 'ok', message: 'Authenticated', data: user },
     };
   } catch (err) {
-    logger.error(err.message);
+    console.error(err.message);
     return { status: 401, data: { status: 'error', message: 'Invalid user' } };
   }
 };
