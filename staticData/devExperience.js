@@ -8,7 +8,7 @@ export const devExperience = [
     workPeriod: 'Feb 2021 - May 2022',
     location: 'Liepaja, Latvia',
     responsibilities:
-      "Developed eCommerce applications for shopify app store. Provided technical support to users of company's applications. Deploying newly developed applications to AWS",
+      "Developed eCommerce applications for shopify app store. Provided technical support to users of company's applications.",
     technologies: [
       'Javascript',
       'Typescript',
