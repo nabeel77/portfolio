@@ -16,7 +16,6 @@ The portfolio was developed using several libraries and services
 Portfolio requirements
 
 [Node.js](https://nodejs.org/en/) >=18.7.0,
-
 [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) >=1.22.17
 
 Install dependencies and dev dependencies using the following command
