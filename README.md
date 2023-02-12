@@ -19,9 +19,13 @@ Portfolio requirements
 [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) >=1.22.17
 
 Install dependencies and dev dependencies using the following command
+```
 
-```cd portfolio
-   yarn install```
+ cd portfolio
+ yarn install
+      
+```
+
 
 Build the app and run the server
 
