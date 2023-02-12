@@ -20,8 +20,8 @@ Portfolio requirements
 
 Install dependencies and dev dependencies using the following command
 
-`cd portfolio`
-`yarn install`
+```cd portfolio
+   yarn install```
 
 Build the app and run the server
 
