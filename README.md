@@ -2,7 +2,7 @@
 
 ## Technologies :gear:
 
-The portfolio was developed using several opensource libraries and projects
+The portfolio was developed using several libraries and services
 
 1. [React.js](https://reactjs.org/): A Javascript library for building rich UI
 2. [Next.js](https://nextjs.org/): It is a open-source web development framework built on top of react enabling react for server side rendering and to generating static websites.
