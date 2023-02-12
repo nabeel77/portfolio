@@ -29,9 +29,17 @@ Install dependencies and dev dependencies using the following command
 
 Build the app and run the server
 
-`yarn build`
-`yarn start`
+```
+
+yarn build
+yarn start
+
+```
 
 Run development server :hammer_and_wrench:
 
-`yarn dev`
+```
+
+yarn dev
+
+```
