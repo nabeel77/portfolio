@@ -39,11 +39,6 @@ yarn start
 Run development server :hammer_and_wrench:
 
 ```
-
-```
-
 yarn dev
-
-```
 
 ```
