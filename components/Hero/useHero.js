@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
 
@@ -12,7 +12,9 @@ import SplitType from 'split-type';
  */
 
 const useHero = (textComponentNames, arrow) => {
+  const [isReady, setIsReady] = useState(false);
   const componentIds = textComponentNames;
+
   useEffect(() => {
     componentIds.forEach((componentId) => {
       const name = new SplitType(componentId);
@@ -31,13 +33,17 @@ const useHero = (textComponentNames, arrow) => {
         delay: 0.2,
         duration: 0.1,
       });
-      gsap.to(arrow, {
-        y: 0,
-        delay: 1,
-        duration: 1,
-      });
     });
+    gsap.to(arrow, {
+      y: 0,
+      delay: 1,
+      duration: 1,
+    });
+    setIsReady(true);
+    return () => setIsReady(false);
   }, []);
+
+  return { isReady };
 };
 
 export default useHero;
