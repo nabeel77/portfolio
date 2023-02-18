@@ -3,20 +3,24 @@ import { HiArrowNarrowDown } from 'react-icons/hi';
 import MovingParticles from '../Particles';
 
 const Hero = () => {
-  useHero(['#name', '#profesion'], '.arrow');
+  const { isReady } = useHero(['#name', '#profession'], '.arrow');
   return (
     <section id="hero" className="w-full h-full">
       <MovingParticles />
       <div className="h-[75%] relative flex flex-col gap-4 justify-center items-center">
         <h1
           id="name"
-          className="text-primary text-3xl md:text-5xl lg:text-7xl font-OrbitronBold"
+          className={`text-primary text-3xl md:text-5xl lg:text-7xl font-OrbitronBold ${
+            !isReady && 'hide'
+          }`}
         >
           NABEEL MUNIR
         </h1>
         <span
-          id="profesion"
-          className="text-md md:text-2xl lg:text-4xl font-bold"
+          id="profession"
+          className={`text-md md:text-2xl lg:text-4xl font-bold ${
+            !isReady && 'hide'
+          }`}
         >
           Full Stack Web Developer
         </span>
