@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from '../../components/Input';
 import { useRouter } from 'next/router';
-import useForm from '../../components/hooks/useForm';
+import useForm from '../../hooks/useForm';
 import globalDesigns from '../../staticData/globalDesigns';
 import Head from 'next/head';
 

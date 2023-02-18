@@ -1,9 +1,9 @@
 import globalDesigns from '../../staticData/globalDesigns';
-import useContact from '../hooks/useContact';
+import useContact from './useContact';
 import Input from '../Input';
 import Popup from '../Popup';
 import popupIcons from '../../staticData/popupIcons';
-import useDebounce from '../hooks/useDebounce';
+import useDebounce from '../../hooks/useDebounce';
 import { ClipLoader } from 'react-spinners';
 
 const Contact = () => {

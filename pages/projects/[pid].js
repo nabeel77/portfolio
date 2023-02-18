@@ -23,21 +23,21 @@ const Project = (props) => {
           </h1>
         </div>
         <div className="p-3 flex flex-col align-middle gap-5">
-          <h3 className="text-2xl md:text-3xl font-RalewayMedium">
-            Project description
-          </h3>
-          <p className="text-md">{project.projectDescription}</p>
+          <h3 className="text-2xl md:text-3xl">Project description</h3>
+          <p className="text-md font-RalewayMedium">
+            {project.projectDescription}
+          </p>
         </div>
         <div className="p-3 flex flex-col align-middle gap-5">
-          <h3 className="text-2xl md:text-3xl font-RalewayMedium">
-            My responsibilities
-          </h3>
-          <p className="text-md">{project.responsibilities}</p>
+          <h3 className="text-2xl md:text-3xl">My responsibilities</h3>
+          <p className="text-md font-RalewayMedium">
+            {project.responsibilities}
+          </p>
         </div>
         <div className="p-3 flex flex-col align-middle gap-5 lg:col-span-full">
           <h3 className="text-xl md:text-2xl">Technologies</h3>
           <ul className="flex gap-5 flex-wrap">
-            {project.technologies.map((item, index) => {
+            {project?.technologies.map((item, index) => {
               return (
                 <div
                   className="flex gap-2 justify-center items-center"
@@ -53,12 +53,13 @@ const Project = (props) => {
           </ul>
         </div>
         <div className="p-3 relative flex flex-col gap-5 lg:col-span-full">
-          {project.images.map((image, index) => {
+          {project?.images.map((image, index) => {
             return (
               <div className="rounded" key={index}>
                 <img
                   className="w-full rounded max-w-full h-auto object-contain"
                   src={image.Location}
+                  alt="project-image"
                   loading="lazy"
                 />
               </div>
