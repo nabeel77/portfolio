@@ -1,4 +1,4 @@
-import useHero from '../hooks/useHero';
+import useHero from './useHero';
 import { HiArrowNarrowDown } from 'react-icons/hi';
 import MovingParticles from '../Particles';
 

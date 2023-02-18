@@ -1,12 +1,12 @@
 import React from 'react';
 import { BiMenu } from 'react-icons/bi';
 import { BiX } from 'react-icons/bi';
-import useSelect from '../hooks/useSelect';
-import { options } from '../../staticData/options';
+import useThemeChange from '../../hooks/useThemeChange';
+import { themeOptions } from '../../staticData/themeOptions';
 import Select from '../Select';
 
 const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
-  const [value, onChange] = useSelect(options[0], true);
+  const [value, onChange] = useThemeChange(themeOptions[0], true);
   return (
     <>
       <header className="fixed w-full h-24 bg-base-200 p-5 z-99999999">
@@ -22,7 +22,7 @@ const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
           </nav>
           <div>
             <Select
-              options={options}
+              themeOptions={themeOptions}
               onChange={onChange}
               defaultValue={value}
             />

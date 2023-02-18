@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useReducer } from 'react';
+import { useState, useCallback, useReducer } from 'react';
 
 const imageUploadReducer = (state, action) => {
   switch (action.type) {
@@ -14,7 +14,6 @@ const useImageUpload = (initialState) => {
     imageUploadReducer,
     initialState
   );
-  const [imageUrl, setImageUrl] = useState('');
   const [error, setError] = useState(false);
 
   const changeErrorState = useCallback(
@@ -44,14 +43,7 @@ const useImageUpload = (initialState) => {
 
   changeErrorState();
 
-  return [
-    imageUrl,
-    onImageChange,
-    error,
-    changeErrorState,
-    imageUrlsState,
-    addImage,
-  ];
+  return [onImageChange, error, changeErrorState, imageUrlsState, addImage];
 };
 
 export default useImageUpload;

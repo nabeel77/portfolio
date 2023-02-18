@@ -1,20 +1,20 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Head from 'next/head';
 import ImageUpload from '../../../components/ImageUpload';
-import useImageUpload from '../../../components/hooks/useImageUpload';
 import Popup from '../../../components/Popup';
-import usePopup from '../../../components/hooks/usePopup';
 import globalDesigns from '../../../staticData/globalDesigns';
 import popupIcons from '../../../staticData/popupIcons';
 import Button from '../../../components/Button';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import Input from '../../../components/Input';
-import useForm from '../../../components/hooks/useForm';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { technologies } from '../../../staticData/devSkills';
 import AllProjects from '../../../components/AllProjects';
 import Loader from '../../../components/Loader';
+import useImageUpload from '../../../hooks/useImageUpload';
+import useForm from '../../../hooks/useForm';
+import usePopup from '../../../hooks/usePopup';
 import { fetchRequest } from '../../../helpers';
 
 const Projects = () => {

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import useLoader from '../hooks/useLoader';
+import useLoader from '../../hooks/useLoader';
 
 const AuthCheck = (props) => {
   const router = useRouter();
