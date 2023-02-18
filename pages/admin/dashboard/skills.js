@@ -4,7 +4,7 @@ import globalDesigns from '../../../staticData/globalDesigns';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import makeAnimated from 'react-select/animated';
 import Select from 'react-select';
-import usePopup from '../../../components/hooks/usePopup';
+import usePopup from '../../../hooks/usePopup';
 import Popup from '../../../components/Popup';
 import { devIcons } from '../../../staticData/devIcons';
 import Technologies from '../../../components/Technologies';

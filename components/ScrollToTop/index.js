@@ -1,4 +1,4 @@
-import useScrollToTop from '../hooks/useScrollToTop';
+import useScrollToTop from '../../hooks/useScrollToTop';
 import { HiArrowNarrowUp } from 'react-icons/hi';
 import Button from '../Button';
 

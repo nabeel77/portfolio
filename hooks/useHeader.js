@@ -1,18 +1,10 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import globalDesigns from '../../staticData/globalDesigns';
+import globalDesigns from '../staticData/globalDesigns';
 
-const useHeader = () => {
+const useHeader = (linkPlaceHoldersArr) => {
   const router = useRouter();
   const scrollRefs = useRef([]);
-  const linkPlaceHoldersArr = [
-    'Home',
-    'Me',
-    'Skills',
-    'Projects',
-    'Experience',
-    'Contact',
-  ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   scrollRefs.current = [...Array(linkPlaceHoldersArr.length).keys()].map(
     (_, i) => scrollRefs.current[i] ?? React.createRef()

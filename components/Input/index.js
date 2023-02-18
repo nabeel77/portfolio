@@ -1,4 +1,4 @@
-import useInput from '../hooks/useInput';
+import useInput from './useInput';
 
 const Input = (props) => {
   const { changeHandler } = useInput(props.id, props.onInput);

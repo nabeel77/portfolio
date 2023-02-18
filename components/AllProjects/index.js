@@ -16,6 +16,7 @@ const AllProjects = ({ projectsArr }) => {
               <img
                 className="w-full h-full object-cover"
                 src={`${project.projectDetails.images[0].Location}`}
+                alt="project-img"
                 loading="lazy"
               />
             </figure>

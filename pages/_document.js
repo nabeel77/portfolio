@@ -6,17 +6,17 @@ export default function Document() {
       <Head />
       <link rel="shortcut icon" href="/favicon/favicon.ico" as="favicon" />
       <link
-        rel="preload"
+        rel="prefetch"
         href="/fonts/Orbitron-Regular.ttf"
-        as="Orbitron"
-        crossOrigin=""
+        as="font"
+        crossorigin="anonymous"
         type="font/ttf"
       />
       <link
-        rel="preload"
+        rel="prefetch"
         href="/fonts/Orbitron-Bold.ttf"
-        as="OrbitronBold"
-        crossOrigin=""
+        as="font"
+        crossorigin="anonymous"
         type="font/ttf"
       />
       <body>

@@ -1,4 +1,4 @@
-export const options = [
+export const themeOptions = [
   '💎 Luxury',
   '🌳 Forest',
   '🍁 Autumn',

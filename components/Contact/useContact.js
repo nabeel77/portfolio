@@ -1,8 +1,26 @@
 import { useEffect, useState, useCallback } from 'react';
 import { fetchRequest } from '../../helpers';
-import usePopup from './usePopup';
-import useForm from './useForm';
+import usePopup from '../../hooks/usePopup';
+import useForm from '../../hooks/useForm';
 import { validateEmail } from '../../helpers';
+
+/**
+ * Description
+ * The useContact hook is directly affiliated with Contact component
+ * 
+ * @returns 
+ * it returns and object of following values
+ * {
+ *  formState, // checks the form state to validate input every time the state changes
+ *  inputHandler, // a function that handles input changes
+ *  isShowing, // to show popup for success or error messages
+ *  popupState, // check whether popup is shown or not
+ *  hidePopup, // a function to handle popup close button click
+ *  submitDisabled, // boolean value to check whether the send button should be disabled or not
+ *  handleSendMessage, // function to handle send button click
+ *  sendingMessage, // boolean value to check whether the message has been sent or not
+   }
+ */
 
 function useContact() {
   const { emailValidation } = validateEmail();
@@ -12,12 +30,13 @@ function useContact() {
     usePopup({
       message: '',
     });
-  const [formState, inputHandler, setFormEmpty, setFormData] = useForm({
+  const [formState, inputHandler, setFormEmpty] = useForm({
     name: { value: '' },
     email: { value: '' },
     message: { value: '' },
   });
 
+  // create flitered form data to be sent to server for processing
   const createFormData = useCallback(() => {
     const date = new Date(Date.now());
     return {
@@ -55,7 +74,8 @@ function useContact() {
     }
   };
 
-  const handleSendMessage = useCallback(async () => {
+  // handle send button click
+  const handleSendMessage = async () => {
     setSendingMessage(true);
     if (!emailValidation(formState.inputs.email.value) && !submitDisabled) {
       setSubmitDisabled(true);
@@ -64,8 +84,9 @@ function useContact() {
     } else {
       await sendMessage(formState);
     }
-  });
+  };
 
+  // check for contact form inputs validation every time the form state changes
   useEffect(() => {
     if (
       emailValidation(formState.inputs.email.value) &&
