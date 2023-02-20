@@ -32,16 +32,6 @@ const AdminLogin = () => {
     }
   };
 
-  useEffect(() => {
-    const user = async () => {
-      const result = await authenticateUser();
-      if (result.message !== 'Invalid user') {
-        router.push('/admin/dashboard');
-      }
-    };
-    user();
-  }, []);
-
   return (
     <React.Fragment>
       <Head>
@@ -72,7 +62,7 @@ const AdminLogin = () => {
             />
             <button
               type="submit"
-              className={`${globalDesigns.responsiveFontStyles} text-primary bg-accent w-1/2 rounded py-2.5 uppercase border border-solid border-blue-darker hover:bg-transparent hover:text-blue-darker`}
+              className={`${globalDesigns.responsiveFontStyles} text-primary bg-accent w-1/2 rounded py-2.5 uppercase hover:btn-ghost`}
             >
               Login
             </button>
