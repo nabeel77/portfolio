@@ -11,7 +11,9 @@ export const checkUser = async (req, res) => {
 export const autheticateUser = async (req, res) => {
   const { cookies } = req;
   const jwt = cookies.token;
-  return await authenticate(jwt);
+  return jwt
+    ? await authenticate(jwt)
+    : { status: 400, data: { status: 'error', message: 'Unauthorized user' } };
 };
 
 export const logout = async (req, res) => {
