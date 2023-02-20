@@ -14,6 +14,7 @@ const useImageUpload = (initialState) => {
     imageUploadReducer,
     initialState
   );
+
   const [error, setError] = useState(false);
 
   const changeErrorState = useCallback(
@@ -43,7 +44,7 @@ const useImageUpload = (initialState) => {
 
   changeErrorState();
 
-  return [onImageChange, error, changeErrorState, imageUrlsState, addImage];
+  return { onImageChange, error, changeErrorState, imageUrlsState, addImage };
 };
 
 export default useImageUpload;

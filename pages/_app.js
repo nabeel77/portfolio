@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { useRouter } from 'next/router';
-import Menu from '../components/Menu';
+import AdminMenu from '../components/AdminMenu';
 import AuthCheck from '../components/AuthCheck';
 import useHeader from '../hooks/useHeader';
 import Header from '../components/Header';
@@ -12,6 +12,10 @@ export default function App({ Component, pageProps }) {
   const isDashboard = router.pathname.includes('dashboard');
   const isLogin = router.pathname.includes('login');
   const dashboardMenuItems = [
+    {
+      title: 'Home',
+      path: '/',
+    },
     {
       title: 'Projects',
       path: '/admin/dashboard/projects',
@@ -28,7 +32,7 @@ export default function App({ Component, pageProps }) {
       {isDashboard ? (
         <AuthCheck>
           <div className="px-5 relative w-full h-full">
-            <Menu menuItems={dashboardMenuItems} />
+            <AdminMenu menuItems={dashboardMenuItems} />
             <Component {...pageProps} />
           </div>
         </AuthCheck>

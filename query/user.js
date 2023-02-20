@@ -29,7 +29,7 @@ export const checkUserCredentials = async (res, username, password) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
-        maxAge: 60 * 60 * 24 * 30,
+        maxAge: 60 * 15 * 1000,
         path: '/',
       });
       res.setHeader('Set-Cookie', serialized);
@@ -57,7 +57,29 @@ export const authenticate = async (token) => {
       data: { status: 'ok', message: 'Authenticated', data: user },
     };
   } catch (err) {
-    console.error(err.message);
     return { status: 401, data: { status: 'error', message: 'Invalid user' } };
+  }
+};
+
+export const logoutUser = async (res) => {
+  try {
+    const serialized = serialize('token', '', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 0,
+      path: '/',
+    });
+    res.setHeader('Set-Cookie', serialized);
+    return {
+      status: 200,
+      data: { status: 'ok', message: 'Log out is successful' },
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      status: 400,
+      data: { status: 'error', message: 'Something went wrong' },
+    };
   }
 };
