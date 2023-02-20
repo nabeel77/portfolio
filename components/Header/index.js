@@ -8,7 +8,7 @@ import Select from '../Select';
 const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
   const [value, onChange] = useThemeChange(themeOptions[0], true);
   return (
-    <>
+    <React.Fragment>
       <header className="fixed w-full h-24 bg-base-200 p-5 z-99999999">
         <div className="w-full h-full flex justify-center items-center">
           <button
@@ -46,7 +46,7 @@ const Header = ({ buttonClick, links, isMobileMenuOpen }) => {
           <div className="h-auto flex flex-col gap-5 pt-20">{links}</div>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

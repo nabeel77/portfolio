@@ -1,20 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import useLoader from '../../hooks/useLoader';
+import { authenticateUser } from '../../helpers';
 
 const AuthCheck = (props) => {
   const router = useRouter();
   const [validUser, setValidUser] = useState(false);
   const [loader, showLoader, hideLoader] = useLoader();
-  const authenticateUser = useCallback(async () => {
-    const result = await fetch('/api/user/authenticate', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then((res) => res.json());
-    return result;
-  }, []);
 
   useEffect(() => {
     const user = async () => {

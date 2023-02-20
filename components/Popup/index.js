@@ -33,7 +33,7 @@ const Popup = (props) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className={`rounded bg-primary mx-y-0 mx-auto fixed left-0 lg:left-3 bottom-16 md:w-max h-max`}
+      className={`rounded bg-primary mx-y-0 mx-auto fixed left-0 lg:left-3 bottom-16 md:w-max h-max z-99999999`}
     >
       <button
         className="absolute top-[0.4rem] lg:top-2 right-2 h-6 w-6 text-center"
