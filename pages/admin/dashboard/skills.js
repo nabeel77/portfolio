@@ -88,7 +88,7 @@ const Skills = () => {
       />
       <div className="flex flex-col gap-4 w-full pl-8 pr-8 pt-28">
         <Button
-          styles={`w-10 h-10 ${buttonStyles}`}
+          styles={`w-10 h-10 grid ${buttonStyles}`}
           handleClick={handleFormState}
         >
           {formShow ? (
@@ -109,7 +109,7 @@ const Skills = () => {
               options={technologies}
             />
             <Button
-              styles={`px-3.5 py-2 ${buttonStyles}`}
+              styles={`btn btn-primary hover:btn-ghost ${buttonStyles}`}
               handleClick={handleSkillsSubmit}
             >
               Submit

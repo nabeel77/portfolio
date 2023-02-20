@@ -43,7 +43,8 @@ export const technologies = [
   { value: 'Shopify', label: 'Shopify' },
   { value: 'REST API', label: 'REST API' },
   { value: 'AWS', label: 'AWS' },
-  { value: 'S3', label: 'S3' },
+  { value: 'AWS S3', label: 'AWS S3' },
+  { value: 'AWS EC2', label: 'AWS EC2' },
 ];
 
 export const devTechStack = [

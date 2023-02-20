@@ -19,7 +19,7 @@ import { fetchRequest } from '../../../helpers';
 
 const Projects = () => {
   const animatedComponents = makeAnimated();
-  const [, onImageChange, error, changeErrorState, imageUrlsState] =
+  const { onImageChange, error, changeErrorState, imageUrlsState } =
     useImageUpload([]);
   const [isShowing, showPopup, hidePopup, popupState, setError, setSuccess] =
     usePopup({
@@ -62,22 +62,42 @@ const Projects = () => {
     return formData;
   }, [formState, selectedOptions, imageUrlsState]);
 
+  const validateInputs = () => {
+    if (
+      !formState.inputs.name.value ||
+      !formState.inputs.description.value ||
+      !formState.inputs.responsibilities.value ||
+      !selectedOptions
+    ) {
+      return false;
+    }
+    return true;
+  };
+
   const submitHandler = useCallback(
     async (event) => {
       event.preventDefault();
-      const formData = createFormData();
-      const res = await fetchRequest('/api/projects', {
-        method: 'POST',
-        body: formData,
-      });
-      if (res.status === 'success') {
-        setSuccess(res.message);
-        showPopup();
+      if (validateInputs()) {
+        const formData = createFormData();
+        const res = await fetchRequest('/api/projects', {
+          method: 'POST',
+          body: formData,
+        });
+        if (res.status === 'success') {
+          setSuccess(res.message);
+          showPopup();
+        } else {
+          setError(res.message);
+          showPopup();
+        }
       } else {
-        setError(res.message);
+        setError(
+          'Name, description, responsibilities and technology options are required'
+        );
         showPopup();
       }
     },
+
     [formState, selectedOptions, imageUrlsState]
   );
 
@@ -107,10 +127,10 @@ const Projects = () => {
 
   // Run when the component renders initially to get user's skillsets
   useEffect(() => {
-    const skills = async () => {
+    const projects = async () => {
       await getProjects();
     };
-    skills();
+    projects();
   }, []);
 
   useEffect(() => {
@@ -202,7 +222,7 @@ const Projects = () => {
                 error={error}
                 changeErrorState={changeErrorState}
               />
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary hover:btn-ghost">
                 Submit
               </button>
             </form>

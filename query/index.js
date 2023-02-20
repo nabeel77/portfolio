@@ -1,4 +1,9 @@
-import { checkUserCredentials, authenticate, getUser } from './user';
+import {
+  checkUserCredentials,
+  authenticate,
+  getUser,
+  logoutUser,
+} from './user';
 import { userSkills, getUserSkills, addProjects, getProjects } from './data';
 
 export {
@@ -9,4 +14,5 @@ export {
   getUserSkills,
   addProjects,
   getProjects,
+  logoutUser,
 };

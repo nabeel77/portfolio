@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Input from '../../components/Input';
 import { useRouter } from 'next/router';
 import useForm from '../../hooks/useForm';
 import globalDesigns from '../../staticData/globalDesigns';
 import Head from 'next/head';
+import { authenticateUser } from '../../helpers';
 
 const AdminLogin = () => {
   const router = useRouter();
@@ -30,6 +31,17 @@ const AdminLogin = () => {
       router.push('/admin/dashboard');
     }
   };
+
+  useEffect(() => {
+    const user = async () => {
+      const result = await authenticateUser();
+      if (result.message !== 'Invalid user') {
+        router.push('/admin/dashboard');
+      }
+    };
+    user();
+  }, []);
+
   return (
     <React.Fragment>
       <Head>
