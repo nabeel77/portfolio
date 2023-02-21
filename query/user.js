@@ -76,7 +76,6 @@ export const logoutUser = async (res) => {
       data: { status: 'ok', message: 'Log out is successful' },
     };
   } catch (err) {
-    console.error(err);
     return {
       status: 400,
       data: { status: 'error', message: 'Something went wrong' },
