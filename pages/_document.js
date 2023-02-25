@@ -19,6 +19,27 @@ export default function Document() {
         crossorigin="anonymous"
         type="font/ttf"
       />
+      <link
+        rel="prefetch"
+        href="/fonts/Raleway-Black.ttf"
+        as="font"
+        crossorigin="anonymous"
+        type="font/ttf"
+      />
+      <link
+        rel="prefetch"
+        href="/fonts/Raleway-Bold.ttf"
+        as="font"
+        crossorigin="anonymous"
+        type="font/ttf"
+      />
+      <link
+        rel="prefetch"
+        href="/fonts/Raleway-Medium.ttf"
+        as="font"
+        crossorigin="anonymous"
+        type="font/ttf"
+      />
       <body>
         <Main />
         <NextScript />
