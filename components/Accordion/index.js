@@ -29,7 +29,7 @@ const Accordion = ({ content }) => {
   return (
     <React.Fragment>
       <div
-        className="accordion-item cursor-pointer rounded px-4 py-5 w-full md:w-60 bg-primary -mb-5 z-99999999"
+        className="accordion-item cursor-pointer rounded px-4 py-5 w-full md:w-60 bg-primary -mb-5 z-9999"
         onClick={() => setIsActive(!isActive)}
       >
         <div className="accordion-title grid grid-cols-accordionSm md:grid-cols-accordionMd lg:grid-cols-accordionLg gap-2">
