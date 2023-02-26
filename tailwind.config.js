@@ -123,6 +123,7 @@ module.exports = {
       },
       zIndex: {
         99999999: '99999999',
+        9999: '9999',
       },
       gridColumn: {
         'span-5': '2 / span 5',
