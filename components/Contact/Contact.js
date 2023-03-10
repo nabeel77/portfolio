@@ -2,7 +2,7 @@ import globalDesigns from '../../staticData/globalDesigns';
 import useContact from './useContact';
 import { Input } from '../Input';
 import { Popup } from '../Popup';
-import ClipLoader from 'react-spinners';
+import { ClipLoader } from 'react-spinners';
 import popupIcons from '../../staticData/popupIcons';
 import useDebounce from '../../hooks/useDebounce';
 
