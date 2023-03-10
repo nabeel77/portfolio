@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
-import Input from '../../components/Input';
+import React from 'react';
+import { Input } from '../../components/Input';
 import { useRouter } from 'next/router';
 import useForm from '../../hooks/useForm';
 import globalDesigns from '../../staticData/globalDesigns';
 import Head from 'next/head';
-import { authenticateUser } from '../../helpers';
 
 const AdminLogin = () => {
   const router = useRouter();

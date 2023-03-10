@@ -1,15 +1,15 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import Button from '../../../components/Button';
-import globalDesigns from '../../../staticData/globalDesigns';
 import { BiPlus, BiMinus } from 'react-icons/bi';
+import { Popup } from '../../../components/Popup';
+import { devIcons } from '../../../staticData/devIcons';
+import { Technologies } from '../../../components/Technologies';
+import { technologies } from '../../../staticData/devSkills';
+import { Button } from '../../../components/Button';
 import makeAnimated from 'react-select/animated';
 import Select from 'react-select';
 import usePopup from '../../../hooks/usePopup';
-import Popup from '../../../components/Popup';
-import { devIcons } from '../../../staticData/devIcons';
-import Technologies from '../../../components/Technologies';
-import { technologies } from '../../../staticData/devSkills';
 import Head from 'next/head';
+import globalDesigns from '../../../staticData/globalDesigns';
 
 const Skills = () => {
   const animatedComponents = makeAnimated();
