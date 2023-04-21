@@ -4,37 +4,16 @@ export const config = {
   runtime: 'experimental-edge',
 };
 
-const image = fetch(
-  new URL('../../public/images/Nabeel.jpg', import.meta.url)
-).then((res) => res.arrayBuffer());
 const orbitron = fetch(
   new URL('../../public/fonts/Orbitron-Regular.ttf', import.meta.url)
 ).then((res) => res.arrayBuffer());
-const orbitronBold = fetch(
-  new URL('../../public/fonts/Orbitron-Bold.ttf', import.meta.url)
-).then((res) => res.arrayBuffer());
 
 export default async function handler(req) {
-  const imageData = await image;
   const orbitronRegular = await orbitron;
-  const orbBold = await orbitronBold;
-  const { searchParams, protocol, host } = new URL(req.url);
   return new ImageResponse(
     (
       <div tw="flex flex-col gap-2 justify-center items-center bg-[#171212] w-full h-full">
         <div tw="text-5xl flex justify-center items-center flex-col gap-2 w-full h-full -mb-10">
-          <div tw="flex w-40">
-            <img
-              style={{
-                borderRadius: '50%',
-                objectFit: 'cover',
-                objectPosition: '0 50px',
-              }}
-              width="256"
-              height="256"
-              src={imageData}
-            />
-          </div>
           <div tw="flex flex-col w-full h-max justify-center items-center">
             <p
               style={{
@@ -83,12 +62,6 @@ export default async function handler(req) {
           name: 'Orbitron',
           data: orbitronRegular,
           weight: 400,
-          style: 'normal',
-        },
-        {
-          name: 'Orbitron',
-          data: orbBold,
-          weight: 700,
           style: 'normal',
         },
       ],
