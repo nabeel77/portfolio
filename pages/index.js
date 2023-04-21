@@ -13,6 +13,7 @@ import { getSkills, getProjects } from '../query/staticDataFetching';
 import Head from 'next/head';
 
 export default function Home({ scrollRefs, skills, projects }) {
+  const imageUrl = 'http://localhost:3000/api/og';
   const [index, setIndex] = useState(null);
 
   const router = useRouter();
@@ -41,6 +42,16 @@ export default function Home({ scrollRefs, skills, projects }) {
     <React.Fragment>
       <Head>
         <title>Nabeel Munir Portfolio</title>
+        <meta property="og:url" content="https://www.nabeelmunir.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Nabeel Munir Portfolio" />
+        <meta property="og:image" content={imageUrl} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="nabeelmunir.com" />
+        <meta property="twitter:url" content="https://www.nabeelmunir.com/" />
+        <meta name="twitter:title" content="Nabeel Munir Portfolio" />
+        <meta name="twitter:image" content={imageUrl} />
       </Head>
       <div className="">
         <div className="py-28 px-10 flex flex-col gap-5">
