@@ -14,7 +14,10 @@ export default function EmailToSender({ name, email, message, dateString }) {
   return (
     <Html>
       <Head />
-      <Preview>New Email From {name}</Preview>
+      <Preview>
+        Thank you for your message, {name}. I will try to get back to you as
+        soon as possible.
+      </Preview>
       <Section style={main}>
         <Container style={container}>
           <Section style={{ marginTop: '32px' }}>
@@ -38,7 +41,7 @@ export default function EmailToSender({ name, email, message, dateString }) {
             </Link>
           </Text>
           <Text style={{ ...text, fontStyle: 'italic' }}>
-            <strong>Message: </strong>
+            <strong>Your Message: </strong>
           </Text>
           <Text style={text}>{message}</Text>
           <Text style={{ ...text, fontStyle: 'italic' }}>

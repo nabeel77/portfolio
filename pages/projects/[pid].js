@@ -2,7 +2,7 @@ import React from 'react';
 import { getProjectNames, getProject } from '../../query/staticDataFetching';
 import { devIcons } from '../../staticData/devIcons';
 import { useRouter } from 'next/router';
-import Loader from '../../components/Loader';
+import { Loader } from '../../components/Loader';
 import Head from 'next/head';
 
 const Project = (props) => {

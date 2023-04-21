@@ -28,12 +28,10 @@ export default function useSendMessage() {
             } catch (error) {
               if (error.response) {
                 console.error(error.response.body);
-                res
-                  .status(400)
-                  .json({
-                    status: 400,
-                    message: `1: Email sending Error: ${error.response.body.errors[0].message}`,
-                  });
+                res.status(400).json({
+                  status: 400,
+                  message: `1: Email sending Error: ${error.response.body.errors[0].message}`,
+                });
                 return;
               }
 
@@ -51,12 +49,10 @@ export default function useSendMessage() {
         } catch (error) {
           if (error.response) {
             console.error(error.response.body);
-            res
-              .status(400)
-              .json({
-                status: 400,
-                message: `2: Email sending Error: ${error.response.body.errors[0].message}`,
-              });
+            res.status(400).json({
+              status: 400,
+              message: `2: Email sending Error: ${error.response.body.errors[0].message}`,
+            });
             return;
           }
 
@@ -67,12 +63,10 @@ export default function useSendMessage() {
         }
       })();
     } else {
-      res
-        .status(400)
-        .json({
-          status: 400,
-          message: 'Please provide a valid e-mail address!',
-        });
+      res.status(400).json({
+        status: 400,
+        message: 'Please provide a valid e-mail address!',
+      });
     }
   };
 
