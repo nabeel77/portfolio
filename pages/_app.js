@@ -4,6 +4,7 @@ import { AdminMenu } from '../components/AdminMenu';
 import { AuthCheck } from '../components/AuthCheck';
 import { Header } from '../components/Header';
 import useHeader from '../hooks/useHeader';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -46,6 +47,7 @@ export default function App({ Component, pageProps }) {
             isMobileMenuOpen={isMobileMenuOpen}
           />
           <Component {...pageProps} scrollRefs={scrollRefs} />
+          <Analytics />
         </div>
       )}
     </>
