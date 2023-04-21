@@ -11,12 +11,12 @@ import { Footer } from '../components/Footer';
 import { useRouter } from 'next/router';
 import { getSkills, getProjects } from '../query/staticDataFetching';
 import Head from 'next/head';
+import getURL from '../utils/helpers';
 
 export default function Home({ scrollRefs, skills, projects }) {
-  const imageUrl = 'http://localhost:3000/api/og';
+  const imageUrl = `${getURL('/')}api/og`;
+  const { query } = useRouter();
   const [index, setIndex] = useState(null);
-
-  const router = useRouter();
   const elements = [
     <Hero key={0} />,
     <Me key={1} />,
@@ -27,8 +27,8 @@ export default function Home({ scrollRefs, skills, projects }) {
   ];
 
   useEffect(() => {
-    if ('key' in router.query) {
-      setIndex(router.query.key);
+    if ('key' in query) {
+      setIndex(query.key);
     }
   }, []);
 
