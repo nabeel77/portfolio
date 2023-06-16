@@ -1,7 +1,50 @@
 import Image from 'next/image';
 import Magebit from '../public/images/Magebit.png';
+import Swisscom from '../public/images/Swisscom.png';
 
 export const devExperience = [
+  {
+    company: 'Swisscom',
+    position: 'Devops Engineer',
+    workPeriod: 'June 2023 - Present',
+    location: 'Riga, Latvia',
+    responsibilities:
+      "Participate in the design, development, deployment, and maintenance of Swisscom's internal IAM solutions, such as Policy Framework.",
+    technologies: ['Java', 'Spring Boot', 'Javascript', 'Docker', 'Splunk'],
+    companyLogo: (
+      <div className="swisscom">
+        <Image alt="Swisscom" width={50} height={50} src={Swisscom} />
+      </div>
+    ),
+  },
+  {
+    company: 'Magebit',
+    position: 'Full-stack Magebto 2 developer',
+    workPeriod: 'Jun 2022 - Jan 2023',
+    location: 'Riga, Latvia',
+    responsibilities:
+      'Worked in teams and contributed to different projects. Main responsibilites included front-end tasks, bug fixes and some back-end tasks',
+    technologies: [
+      'Javascript',
+      'Php',
+      'Alpine.js',
+      'Node.js',
+      'React.js',
+      'PWA studio',
+      'Magento 2',
+      'Jenkins',
+      'Jira',
+    ],
+    companyLogo: (
+      <Image
+        alt="Magebit"
+        width={80}
+        height={50}
+        src={Magebit}
+        style={{ objectFit: 'contain', marginTop: '30px' }}
+      />
+    ),
+  },
   {
     company: 'Libautech',
     position: 'Full-stack javascript developer',
@@ -103,34 +146,6 @@ export const devExperience = [
           </linearGradient>
         </defs>
       </svg>
-    ),
-  },
-  {
-    company: 'Magebit',
-    position: 'Full-stack Magebto 2 developer',
-    workPeriod: 'Jun 2022 - Jan 2023',
-    location: 'Riga, Latvia',
-    responsibilities:
-      'Worked in teams and contributed to different projects. Main responsibilites included front-end tasks, bug fixes and some back-end tasks',
-    technologies: [
-      'Javascript',
-      'Php',
-      'Alpine.js',
-      'Node.js',
-      'React.js',
-      'PWA studio',
-      'Magento 2',
-      'Jenkins',
-      'Jira',
-    ],
-    companyLogo: (
-      <Image
-        alt="Mountains"
-        width={80}
-        height={50}
-        src={Magebit}
-        style={{ objectFit: 'contain', marginTop: '30px' }}
-      />
     ),
   },
 ];
