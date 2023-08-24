@@ -22,7 +22,7 @@ export const Hero = () => {
             !isReady && 'hide'
           }`}
         >
-          Full Stack Web Developer
+          Full Stack Developer
         </span>
         <div
           id="arrow-container"
