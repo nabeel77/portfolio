@@ -64,15 +64,11 @@ export const Me = () => {
             <strong className="text-primary">socializing</strong> with
             <strong className="text-primary"> friends</strong>, and going for{' '}
             <strong className="text-primary">hikes</strong>. Additionally, I
-            enjoy engaging in
-            <strong className="text-primary"> crypto</strong> and{' '}
-            <strong className="text-primary">NFT</strong> trading as a hobby.
-            This allows me to dive into the
-            <strong className="text-primary"> Blockchain</strong> technology and
-            manage my finances. By trading NFTs, I also improve my technical
-            skills as I study and perform technical analysis on trading charts
-            and gain hands-on experience in the application of Blockchain
-            technology.
+            enjoy learning about
+            <strong className="text-primary">
+              {' '}
+              Blockchain
+            </strong> technology.{' '}
           </p>
         </div>
       </div>
