@@ -7,7 +7,7 @@ import { Terminal } from '../components/Terminal';
 import { Contact } from '../components/Contact';
 
 export default function Home() {
-  const imageUrl = 'https://www.nabeelmunir.com/api/og';
+  const imageUrl = 'https://www.nabeelmunir.com/logo/favicon-512x512.png';
   return (
     <>
       <Head>
@@ -27,10 +27,10 @@ export default function Home() {
         />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
         <meta property="og:image:alt" content="Nabeel Munir, Full Stack Engineer" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Nabeel Munir · Full Stack Engineer" />
         <meta
           name="twitter:description"
