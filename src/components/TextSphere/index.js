@@ -1,1 +1,0 @@
-export { TextSphere } from './TextSphere';

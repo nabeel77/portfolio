@@ -1,1 +1,0 @@
-export { MovingParticles } from './Particles';

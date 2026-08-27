@@ -1,17 +1,17 @@
-import { FaGithub } from 'react-icons/fa';
-import { BsLinkedin } from 'react-icons/bs';
-
-export const Footer = () => {
-  return (
-    <div className="w-full h-16 bg-base-200 flex justify-center items-center">
-      <div className="flex justify-center items-center max-h-max gap-4">
-        <a href="https://www.linkedin.com/in/nabeel-munir-8a7a99134/">
-          <BsLinkedin className="h-6 w-6" />
-        </a>
-        <a href="https://github.com/Nabeel77">
-          <FaGithub className="h-6 w-6" />
-        </a>
-      </div>
-    </div>
-  );
-};
+export const Footer = () => (
+  <footer
+    style={{
+      position: 'relative',
+      zIndex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      padding: '16px clamp(16px,4vw,48px)',
+      borderTop: '1px solid var(--line)',
+      fontSize: 10,
+      letterSpacing: '0.05em',
+      color: 'var(--dim)',
+    }}
+  >
+    <span>© 2026 NABEEL MUNIR</span>
+  </footer>
+);
