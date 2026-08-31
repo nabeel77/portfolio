@@ -94,7 +94,7 @@ const OUTPUTS = {
 };
 
 const COMMANDS = [...Object.keys(OUTPUTS), 'clear', 'matrix', 'snake'];
-const QUICK = ['whoami', 'stack', 'projects', 'coffee', 'snake'];
+const QUICK = ['whoami', 'stack', 'projects', 'coffee'];
 
 const Prompt = () => (
   <>
@@ -378,7 +378,6 @@ export const Terminal = () => {
             style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 14 }}
           >
             {QUICK.map((c) => {
-              const isSnake = c === 'snake';
               return (
                 <button
                   key={c}
@@ -387,10 +386,8 @@ export const Terminal = () => {
                   style={{
                     cursor: snakeOn ? 'default' : 'pointer',
                     background: 'none',
-                    border: `1px solid ${
-                      isSnake ? 'var(--green)' : 'var(--line)'
-                    }`,
-                    color: isSnake ? 'var(--green)' : 'var(--dim)',
+                    border: `1px solid var(--line)`,
+                    color: 'var(--dim)',
                     fontFamily: 'inherit',
                     fontSize: 14,
                     padding: '12px 18px',
@@ -398,7 +395,7 @@ export const Terminal = () => {
                     opacity: snakeOn ? 0.5 : 1,
                   }}
                 >
-                  {isSnake ? '🐍 play snake' : c}
+                  {c}
                 </button>
               );
             })}
